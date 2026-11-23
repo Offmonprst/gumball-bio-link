@@ -302,6 +302,125 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --- Dynamic Seasons Database Loader & Renderer ---
+  const defaultSeasonsData = {
+    title: "Daftar Season",
+    subtitle: "The Amazing World of Gumball • Total 6 Season & 240 Episode",
+    seasons: [
+      {
+        id: "season-1",
+        title: "Season 1",
+        years: "2011 - 2012",
+        episodes: "36 Episode",
+        description: "Episode pembuka: The DVD • Penutup: The Fight",
+        url: "https://en.wikipedia.org/wiki/The_Amazing_World_of_Gumball_season_1",
+        isSpecial: false
+      },
+      {
+        id: "season-2",
+        title: "Season 2",
+        years: "2012 - 2013",
+        episodes: "40 Episode",
+        description: "Episode pembuka: The Remote • Penutup: The Finale",
+        url: "https://en.wikipedia.org/wiki/The_Amazing_World_of_Gumball_season_2",
+        isSpecial: false
+      },
+      {
+        id: "season-3",
+        title: "Season 3",
+        years: "2014 - 2015",
+        episodes: "40 Episode",
+        description: "Episode pembuka: The Kids • Penutup: The Money",
+        url: "https://en.wikipedia.org/wiki/The_Amazing_World_of_Gumball_season_3",
+        isSpecial: false
+      },
+      {
+        id: "season-4",
+        title: "Season 4",
+        years: "2015 - 2016",
+        episodes: "40 Episode",
+        description: "Episode pembuka: The Return • Penutup: The Disaster",
+        url: "https://en.wikipedia.org/wiki/The_Amazing_World_of_Gumball_season_4",
+        isSpecial: false
+      },
+      {
+        id: "season-5",
+        title: "Season 5",
+        years: "2016 - 2017",
+        episodes: "40 Episode",
+        description: "Episode pembuka: The Rerun • Penutup: The Line",
+        url: "https://en.wikipedia.org/wiki/The_Amazing_World_of_Gumball_season_5",
+        isSpecial: false
+      },
+      {
+        id: "season-6",
+        title: "Season 6",
+        years: "2018 - 2019",
+        episodes: "44 Episode",
+        description: "Episode pembuka: The Rival • Penutup: The Inquisition",
+        url: "https://en.wikipedia.org/wiki/The_Amazing_World_of_Gumball_season_6",
+        isSpecial: false
+      },
+      {
+        id: "special",
+        title: "Spesial & Miniseri",
+        years: "2019 - 2021",
+        episodes: "14 Episode",
+        description: "Darwin's Yearbook (6 eps) & The Gumball Chronicles (8 eps)",
+        url: "https://en.wikipedia.org/wiki/List_of_The_Amazing_World_of_Gumball_episodes#Special_episodes",
+        isSpecial: true
+      }
+    ]
+  };
+
+  function renderSeasonsList(data) {
+    const container = document.getElementById('season-modal-list');
+    const subTitleEl = document.getElementById('season-modal-sub');
+    const headingEl = document.getElementById('season-modal-heading');
+
+    if (headingEl && data.title) headingEl.textContent = data.title;
+    if (subTitleEl && data.subtitle) subTitleEl.textContent = data.subtitle;
+    if (!container || !Array.isArray(data.seasons)) return;
+
+    container.innerHTML = data.seasons.map(item => `
+      <a href="${item.url || '#'}" target="_blank" rel="noopener noreferrer" class="season-list-item ${item.isSpecial ? 'season-special-item' : ''}" aria-label="Buka rincian ${item.title}">
+        <div class="season-item-header">
+          <div class="season-item-left">
+            <span class="season-badge-tag">${item.title}</span>
+            <span class="season-years">${item.years}</span>
+          </div>
+          <div class="season-item-right">
+            <span class="season-eps-count ${item.isSpecial ? 'season-special-eps' : ''}">${item.episodes}</span>
+            <svg viewBox="0 0 24 24" class="season-arrow-icon" aria-hidden="true"><path fill="currentColor" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+          </div>
+        </div>
+        <p class="season-item-desc">${item.description}</p>
+      </a>
+    `).join('');
+
+    container.querySelectorAll('.season-list-item').forEach(link => {
+      link.addEventListener('click', () => {
+        playCartoonPop(520);
+      });
+    });
+  }
+
+  async function loadSeasonsDatabase() {
+    try {
+      const response = await fetch('seasons.json?v=' + Date.now());
+      if (response.ok) {
+        const jsonData = await response.json();
+        renderSeasonsList(jsonData);
+        return;
+      }
+    } catch (e) {
+      console.warn('Menggunakan fallback data seasons:', e);
+    }
+    renderSeasonsList(defaultSeasonsData);
+  }
+
+  loadSeasonsDatabase();
+
   // Copy URL Button Handler
   if (copyUrlBtn && shareUrlInput) {
     copyUrlBtn.addEventListener('click', async () => {
