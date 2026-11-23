@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=discord-invite-v14">
+  <link rel="stylesheet" href="styles.css?v=biodata-darwin-v15">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%2338BDF8' stroke='%23FFFFFF' stroke-width='4'/><circle cx='38' cy='42' r='8' fill='%23FFFFFF'/><circle cx='62' cy='42' r='8' fill='%23FFFFFF'/><circle cx='40' cy='42' r='4' fill='%230F2942'/><circle cx='60' cy='42' r='4' fill='%230F2942'/><ellipse cx='50' cy='54' rx='6' ry='4' fill='%2334D399'/><path d='M 38 66 Q 50 78 62 66' stroke='%230F2942' stroke-width='4' fill='none' stroke-linecap='round'/></svg>">
   <style>
     /* Critical Corner Positioning: Frameless Large Characters with Noticeable Spring Slide-In */
@@ -421,22 +421,91 @@
       </div>
     </section>
 
-    <!-- Quotes Frosted Glass Card -->
-    <section class="liquid-glass-card quote-glass-card" aria-label="Kata Mutiara Elmore">
+    <!-- Biodata Darwin Liquid Glass Card -->
+    <section class="liquid-glass-card biodata-glass-card" aria-label="Biodata Lengkap Darwin Watterson">
       <div class="glass-specular-top" aria-hidden="true"></div>
-      <div class="quote-header">
-        <span class="quote-card-title">Kata Mutiara Elmore</span>
-        <button type="button" id="next-quote-btn" class="liquid-refresh-btn" aria-label="Ganti kutipan kartun acak">
+      
+      <div class="biodata-header">
+        <h2 class="biodata-card-title">
           <svg viewBox="0 0 24 24" class="btn-svg-sm" aria-hidden="true">
-            <path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM7 7.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5S9.33 9 8.5 9 7 8.33 7 7.5zM12 13.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm3.5 4c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+            <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
           </svg>
-          <span>Ganti Kata</span>
-        </button>
+          <span>Biodata Darwin</span>
+        </h2>
+        <span class="biodata-badge">Profil Karakter</span>
       </div>
-      <blockquote class="quote-bubble-glass" id="quote-container" aria-live="polite">
-        <p class="quote-content" id="quote-text">"Kalau kamu gagal di percobaan pertama, ya sudah berarti kamu memang tidak ditakdirkan untuk itu."</p>
-        <cite class="quote-speaker" id="quote-author">Gumball Watterson</cite>
-      </blockquote>
+
+      <div class="biodata-list">
+        <!-- Nama Lengkap -->
+        <div class="biodata-row">
+          <div class="biodata-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+          </div>
+          <div class="biodata-content">
+            <span class="biodata-label">Nama Lengkap</span>
+            <span class="biodata-value">Darwin Raglan Caspian Ahab Poseidon Nicodemius Watterson III</span>
+          </div>
+        </div>
+
+        <!-- Spesies & Usia -->
+        <div class="biodata-row">
+          <div class="biodata-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.93V17a1 1 0 0 1-2 0v-.07A8 8 0 0 1 4.07 11H5a1 1 0 0 1 0-2h-.93A8 8 0 0 1 11 4.07V5a1 1 0 0 1 2 0v-.93A8 8 0 0 1 19.93 9H19a1 1 0 0 1 0 2h.93A8 8 0 0 1 13 16.93z"/></svg>
+          </div>
+          <div class="biodata-content">
+            <span class="biodata-label">Spesies &amp; Usia</span>
+            <span class="biodata-value">Ikan Mas Antropomorfik <small>(Goldfish)</small> • 10 Tahun</span>
+          </div>
+        </div>
+
+        <!-- Keluarga -->
+        <div class="biodata-row">
+          <div class="biodata-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+          </div>
+          <div class="biodata-content">
+            <span class="biodata-label">Keluarga Watterson</span>
+            <span class="biodata-value">Nicole &amp; Richard <small>(Orang Tua)</small>, Gumball <small>(Kakak)</small>, Anais <small>(Adik)</small></span>
+          </div>
+        </div>
+
+        <!-- Ciri Khas -->
+        <div class="biodata-row">
+          <div class="biodata-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7z"/></svg>
+          </div>
+          <div class="biodata-content">
+            <span class="biodata-label">Ciri Khas</span>
+            <span class="biodata-value">Sepatu sneakers hijau legendaris &amp; kaki hasil evolusi cinta</span>
+          </div>
+        </div>
+
+        <!-- Pasangan / Cinta -->
+        <div class="biodata-row">
+          <div class="biodata-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </div>
+          <div class="biodata-content">
+            <span class="biodata-label">Pasangan / Pacar</span>
+            <span class="biodata-value">Carrie Krueger <small>(Hantu manis teman sekolahnya)</small></span>
+          </div>
+        </div>
+
+        <!-- Sekolah -->
+        <div class="biodata-row">
+          <div class="biodata-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+          </div>
+          <div class="biodata-content">
+            <span class="biodata-label">Sekolah</span>
+            <span class="biodata-value">Elmore Junior High School</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="biodata-footer-note">
+        Ikan peliharaan yang tumbuh kaki karena kekuatan cinta persahabatan dengan Gumball!
+      </div>
     </section>
 
   </main>
@@ -546,6 +615,6 @@
     </div>
   </dialog>
 
-  <script src="app.js?v=discord-invite-v14"></script>
+  <script src="app.js?v=biodata-darwin-v15"></script>
 </body>
 </html>
