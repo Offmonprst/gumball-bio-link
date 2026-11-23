@@ -486,7 +486,7 @@ body {
   overflow: hidden;
   width: 90%;
   max-width: 360px;
-  padding: 32px 24px 28px;
+  padding: 24px 20px 22px;
   border-radius: 28px;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(240, 253, 250, 0.68) 100%);
   border: 1.5px solid rgba(255, 255, 255, 0.95);
@@ -513,192 +513,61 @@ body {
 
 .loading-darwin-stage {
   position: relative;
-  width: 220px;
-  height: 250px;
+  width: 100%;
+  max-width: 320px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
-/* Authentic 60 FPS Articulated Darwin Walker Rig */
-.darwin-actor-wrap {
-  position: relative;
-  z-index: 2;
+.loading-darwin-picture {
+  width: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
-.darwin-rig-walker {
-  position: relative;
-  width: 175px;
-  height: 235px;
-  margin: 0 auto;
-  filter: drop-shadow(0 10px 20px rgba(12, 74, 110, 0.24));
-  user-select: none;
-  pointer-events: none;
-}
-
-/* 60 FPS Body Squash & Stretch Bounce */
-.darwin-rig-body {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 160px;
-  height: 110px;
-  transform: translateX(-50%);
-  z-index: 3;
-  animation: rig-body-bob 0.42s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
-  transform-origin: center bottom;
-  will-change: transform;
-}
-
-.rig-head-img {
+.loading-darwin-anim {
   width: 100%;
-  height: 100%;
+  height: auto;
+  max-height: 180px;
   object-fit: contain;
   display: block;
+  filter: drop-shadow(0 6px 16px rgba(12, 74, 110, 0.16));
 }
 
-@keyframes rig-body-bob {
-  0% { transform: translateX(-50%) translateY(0px) rotate(-1.5deg) scale(1.02, 0.98); }
-  100% { transform: translateX(-50%) translateY(-8px) rotate(1.5deg) scale(0.98, 1.02); }
-}
-
-/* Legs: Hardware-accelerated 60 FPS stride */
-.darwin-rig-leg {
-  position: absolute;
-  top: 98px;
-  width: 64px;
-  height: 130px;
-  transform-origin: 18px 10px;
-  will-change: transform;
-}
-
-.rig-leg-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-/* Back Leg (Left leg behind body) */
-.darwin-rig-leg.leg-back {
-  left: 58px;
-  z-index: 1;
-  animation: rig-leg-back 0.84s cubic-bezier(0.35, 0, 0.65, 1) infinite;
-}
-
-@keyframes rig-leg-back {
-  0% { transform: rotate(-24deg) translateY(-2px); }
-  25% { transform: rotate(2deg) translateY(-16px) scaleY(0.92); }
-  50% { transform: rotate(22deg) translateY(0px) scaleY(1); }
-  75% { transform: rotate(2deg) translateY(2px); }
-  100% { transform: rotate(-24deg) translateY(-2px); }
-}
-
-/* Front Leg (Right leg in front) */
-.darwin-rig-leg.leg-front {
-  left: 80px;
-  z-index: 2;
-  animation: rig-leg-front 0.84s cubic-bezier(0.35, 0, 0.65, 1) infinite;
-}
-
-@keyframes rig-leg-front {
-  0% { transform: rotate(22deg) translateY(0px) scaleY(1); }
-  25% { transform: rotate(2deg) translateY(2px); }
-  50% { transform: rotate(-24deg) translateY(-2px); }
-  75% { transform: rotate(2deg) translateY(-16px) scaleY(0.92); }
-  100% { transform: rotate(22deg) translateY(0px) scaleY(1); }
-}
-
-/* Floor Contact Shadow */
-.darwin-svg-shadow {
-  position: absolute;
-  bottom: 6px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 125px;
-  height: 14px;
-  border-radius: 50%;
-  background: radial-gradient(ellipse at center, rgba(12, 74, 110, 0.42) 0%, transparent 72%);
-  animation: darwin-shadow-step 0.42s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
-  z-index: 1;
-}
-
-@keyframes darwin-shadow-step {
-  0% { transform: translateX(-50%) scaleX(1.05) scaleY(1); opacity: 0.9; }
-  100% { transform: translateX(-50%) scaleX(0.82) scaleY(0.7); opacity: 0.55; }
-}
-
-/* Moving Frosted Glass Treadmill Track */
-.loading-walk-path {
-  width: 155px;
-  height: 6px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.35), rgba(52, 211, 153, 0.45), transparent);
-  position: absolute;
-  bottom: 6px;
-  z-index: 1;
-  overflow: hidden;
-}
-
-.path-moving-dots {
-  width: 200%;
-  height: 100%;
-  background-image: radial-gradient(circle, #38BDF8 2px, transparent 2px);
-  background-size: 16px 6px;
-  animation: path-scroll 0.7s linear infinite;
-}
-
-@keyframes path-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-16px); }
-}
-
-.walk-sparkle {
-  position: absolute;
-  font-size: 1rem;
-  pointer-events: none;
-  z-index: 3;
-}
-
-.sparkle-1 {
-  top: 20px;
-  right: 15px;
-  animation: sparkle-float 1.2s ease-in-out infinite;
-}
-
-.sparkle-2 {
-  bottom: 25px;
-  left: 15px;
-  animation: sparkle-float 1.5s ease-in-out infinite 0.4s;
-}
-
-@keyframes sparkle-float {
-  0%, 100% { transform: translateY(0) scale(0.9); opacity: 0.4; }
-  50% { transform: translateY(-8px) scale(1.15); opacity: 1; }
-}
-
-.loading-title {
+/* Animated Loading Text */
+.loading-text-anim {
   font-family: var(--font-display);
-  font-size: 1.45rem;
-  font-weight: 800;
+  font-size: 1.15rem;
+  font-weight: 700;
   color: var(--text-primary);
-  margin: 0 0 4px;
+  margin: 6px 0 16px;
+  display: inline-flex;
+  align-items: center;
+  letter-spacing: 0.5px;
 }
 
-.loading-status {
-  font-family: var(--font-body);
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  margin: 0 0 18px;
-  min-height: 22px;
-  transition: opacity 0.2s ease;
+.loading-dots {
+  display: inline-flex;
+  margin-left: 1px;
 }
 
+.loading-dots span {
+  display: inline-block;
+  animation: dot-wave 1.4s infinite ease-in-out;
+}
+
+.loading-dots span:nth-child(1) { animation-delay: 0s; }
+.loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+.loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes dot-wave {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.35; }
+  30% { transform: translateY(-4px); opacity: 1; color: var(--pastel-cyan-dark); }
+}
+
+/* 4-Second Animated Progress Bar */
 .loading-progress-track {
   width: 100%;
   height: 8px;
@@ -706,7 +575,7 @@ body {
   background: rgba(12, 74, 110, 0.08);
   overflow: hidden;
   position: relative;
-  margin-bottom: 10px;
+  margin-bottom: 4px;
 }
 
 .loading-progress-fill {
@@ -716,28 +585,6 @@ body {
   background: linear-gradient(90deg, #38BDF8 0%, #34D399 50%, #10B981 100%);
   box-shadow: 0 0 12px rgba(52, 211, 153, 0.45);
   transition: width 0.05s linear;
-}
-
-.loading-percentage-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  font-family: var(--font-body);
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--text-secondary);
-}
-
-.loading-badge {
-  background: rgba(56, 189, 248, 0.12);
-  color: #0284C7;
-  padding: 2px 8px;
-  border-radius: 999px;
-}
-
-.loading-percent {
-  color: #047857;
 }
 
 /* ==========================================================================
