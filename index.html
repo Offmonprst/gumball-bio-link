@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=season-saweria-v11">
+  <link rel="stylesheet" href="styles.css?v=season-modal-v12">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%2338BDF8' stroke='%23FFFFFF' stroke-width='4'/><circle cx='38' cy='42' r='8' fill='%23FFFFFF'/><circle cx='62' cy='42' r='8' fill='%23FFFFFF'/><circle cx='40' cy='42' r='4' fill='%230F2942'/><circle cx='60' cy='42' r='4' fill='%230F2942'/><ellipse cx='50' cy='54' rx='6' ry='4' fill='%2334D399'/><path d='M 38 66 Q 50 78 62 66' stroke='%230F2942' stroke-width='4' fill='none' stroke-linecap='round'/></svg>">
   <style>
     /* Critical Corner Positioning: Frameless Large Characters with Noticeable Spring Slide-In */
@@ -349,8 +349,8 @@
     <!-- Bento-Style Liquid Glass Links -->
     <section class="liquid-bento-grid" aria-label="Koleksi Tautan Penting">
       
-      <!-- Featured Card: List Season & Episode -->
-      <a href="https://en.wikipedia.org/wiki/List_of_The_Amazing_World_of_Gumball_episodes" target="_blank" rel="noopener noreferrer" class="liquid-glass-btn bento-featured btn-season" aria-label="Daftar Season dan Episode The Amazing World of Gumball">
+      <!-- Featured Card: List Season & Episode (Interactive Trigger) -->
+      <button type="button" id="season-modal-btn" class="liquid-glass-btn bento-featured btn-season" aria-haspopup="dialog" aria-controls="season-modal" aria-label="Buka daftar rincian season dan episode">
         <div class="glass-specular-top" aria-hidden="true"></div>
         <div class="btn-icon-halo halo-purple">
           <svg viewBox="0 0 24 24" class="bento-svg" aria-hidden="true">
@@ -362,20 +362,12 @@
             <span class="bento-title">Daftar Season &amp; Episode</span>
             <span class="pastel-badge-cyan">240 Eps</span>
           </div>
-          <span class="bento-subtitle">The Amazing World of Gumball (Season 1 - 6)</span>
-          <div class="season-chips-row" aria-label="Rincian jumlah episode tiap season">
-            <span class="season-chip">S1: 36 eps</span>
-            <span class="season-chip">S2: 40 eps</span>
-            <span class="season-chip">S3: 40 eps</span>
-            <span class="season-chip">S4: 40 eps</span>
-            <span class="season-chip">S5: 40 eps</span>
-            <span class="season-chip">S6: 44 eps</span>
-          </div>
+          <span class="bento-subtitle">Klik untuk melihat rincian seluruh musim</span>
         </div>
         <div class="soft-arrow-pill" aria-hidden="true">
-          <svg viewBox="0 0 24 24" class="arrow-svg"><path fill="currentColor" d="M5 12h14m-6-6l6 6-6 6"/></svg>
+          <svg viewBox="0 0 24 24" class="arrow-svg"><path fill="currentColor" d="M9 5l7 7-7 7"/></svg>
         </div>
-      </a>
+      </button>
 
       <!-- Featured Card: Saweria Donate -->
       <a href="https://saweria.co/Darwincuy" target="_blank" rel="noopener noreferrer" class="liquid-glass-btn bento-featured btn-saweria" aria-label="Donasi ke si Darwin lewat Saweria">
@@ -449,6 +441,111 @@
 
   </main>
 
-  <script src="app.js?v=season-saweria-v11"></script>
+  <!-- Season List Modal Dialog -->
+  <dialog id="season-modal" class="liquid-modal season-modal-dialog" aria-labelledby="season-modal-heading">
+    <div class="liquid-modal-card season-modal-card">
+      <div class="glass-specular-top" aria-hidden="true"></div>
+      
+      <div class="modal-top">
+        <h2 id="season-modal-heading" class="modal-headline">Daftar Season</h2>
+        <button type="button" id="close-season-modal-btn" class="liquid-close-btn" aria-label="Tutup jendela daftar season">&times;</button>
+      </div>
+      
+      <p class="season-modal-sub">The Amazing World of Gumball • Total 6 Season &amp; 240 Episode</p>
+      
+      <div class="season-modal-body">
+        <!-- Season 1 -->
+        <div class="season-list-item">
+          <div class="season-item-header">
+            <div class="season-item-left">
+              <span class="season-badge-tag">Season 1</span>
+              <span class="season-years">2011 - 2012</span>
+            </div>
+            <span class="season-eps-count">36 Episode</span>
+          </div>
+          <p class="season-item-desc">Episode pembuka: <em>The DVD</em> • Penutup: <em>The Fight</em></p>
+        </div>
+
+        <!-- Season 2 -->
+        <div class="season-list-item">
+          <div class="season-item-header">
+            <div class="season-item-left">
+              <span class="season-badge-tag">Season 2</span>
+              <span class="season-years">2012 - 2013</span>
+            </div>
+            <span class="season-eps-count">40 Episode</span>
+          </div>
+          <p class="season-item-desc">Episode pembuka: <em>The Remote</em> • Penutup: <em>The Finale</em></p>
+        </div>
+
+        <!-- Season 3 -->
+        <div class="season-list-item">
+          <div class="season-item-header">
+            <div class="season-item-left">
+              <span class="season-badge-tag">Season 3</span>
+              <span class="season-years">2014 - 2015</span>
+            </div>
+            <span class="season-eps-count">40 Episode</span>
+          </div>
+          <p class="season-item-desc">Episode pembuka: <em>The Kids</em> • Penutup: <em>The Money</em></p>
+        </div>
+
+        <!-- Season 4 -->
+        <div class="season-list-item">
+          <div class="season-item-header">
+            <div class="season-item-left">
+              <span class="season-badge-tag">Season 4</span>
+              <span class="season-years">2015 - 2016</span>
+            </div>
+            <span class="season-eps-count">40 Episode</span>
+          </div>
+          <p class="season-item-desc">Episode pembuka: <em>The Return</em> • Penutup: <em>The Disaster</em></p>
+        </div>
+
+        <!-- Season 5 -->
+        <div class="season-list-item">
+          <div class="season-item-header">
+            <div class="season-item-left">
+              <span class="season-badge-tag">Season 5</span>
+              <span class="season-years">2016 - 2017</span>
+            </div>
+            <span class="season-eps-count">40 Episode</span>
+          </div>
+          <p class="season-item-desc">Episode pembuka: <em>The Rerun</em> • Penutup: <em>The Line</em></p>
+        </div>
+
+        <!-- Season 6 -->
+        <div class="season-list-item">
+          <div class="season-item-header">
+            <div class="season-item-left">
+              <span class="season-badge-tag">Season 6</span>
+              <span class="season-years">2018 - 2019</span>
+            </div>
+            <span class="season-eps-count">44 Episode</span>
+          </div>
+          <p class="season-item-desc">Episode pembuka: <em>The Rival</em> • Penutup: <em>The Inquisition</em></p>
+        </div>
+
+        <!-- Special Miniseries -->
+        <div class="season-list-item season-special-item">
+          <div class="season-item-header">
+            <div class="season-item-left">
+              <span class="season-badge-tag">Spesial &amp; Miniseri</span>
+              <span class="season-years">2019 - 2021</span>
+            </div>
+            <span class="season-eps-count season-special-eps">14 Episode</span>
+          </div>
+          <p class="season-item-desc">Darwin's Yearbook (6 eps) &amp; The Gumball Chronicles (8 eps)</p>
+        </div>
+      </div>
+
+      <a href="https://en.wikipedia.org/wiki/List_of_The_Amazing_World_of_Gumball_episodes" target="_blank" rel="noopener noreferrer" class="season-wiki-btn">
+        <span>Buka Panduan Lengkap Semua Episode di Wikipedia</span>
+        <svg viewBox="0 0 24 24" class="arrow-svg" aria-hidden="true"><path fill="currentColor" d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
+      </a>
+    </div>
+  </dialog>
+
+  <script src="app.js?v=season-modal-v12"></script>
 </body>
 </html>

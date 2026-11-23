@@ -82,6 +82,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const shareUrlInput = document.getElementById('share-url-input');
   const toast = document.getElementById('toast');
   const toastMessage = document.getElementById('toast-message');
+  const seasonModalBtn = document.getElementById('season-modal-btn');
+  const seasonModal = document.getElementById('season-modal');
+  const closeSeasonModalBtn = document.getElementById('close-season-modal-btn');
 
   // Set default share URL input
   if (shareUrlInput) {
@@ -252,6 +255,49 @@ document.addEventListener('DOMContentLoaded', () => {
       );
       if (!isInDialog) {
         shareModal.close();
+      }
+    });
+  }
+
+  // Season Modal Handlers
+  if (seasonModalBtn && seasonModal) {
+    seasonModalBtn.addEventListener('click', () => {
+      playCartoonPop(600);
+      if (typeof seasonModal.showModal === 'function') {
+        seasonModal.showModal();
+      } else {
+        seasonModal.setAttribute('open', '');
+      }
+    });
+  }
+
+  if (closeSeasonModalBtn && seasonModal) {
+    closeSeasonModalBtn.addEventListener('click', () => {
+      playCartoonPop(320);
+      if (typeof seasonModal.close === 'function') {
+        seasonModal.close();
+      } else {
+        seasonModal.removeAttribute('open');
+      }
+    });
+  }
+
+  // Close Season Modal when clicking backdrop
+  if (seasonModal) {
+    seasonModal.addEventListener('click', (event) => {
+      const rect = seasonModal.getBoundingClientRect();
+      const isInDialog = (
+        rect.top <= event.clientY &&
+        event.clientY <= rect.top + rect.height &&
+        rect.left <= event.clientX &&
+        event.clientX <= rect.left + rect.width
+      );
+      if (!isInDialog) {
+        if (typeof seasonModal.close === 'function') {
+          seasonModal.close();
+        } else {
+          seasonModal.removeAttribute('open');
+        }
       }
     });
   }
