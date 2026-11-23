@@ -13,7 +13,7 @@
 
 ## Social Media Dock & Quick Links
 - **Hero Dock**: Replaced status pill with frosted liquid glass pill buttons for Instagram (@thisdarwin.id), TikTok (@thisdarwin.id), and YouTube (@thisdarwin.id9).
-- **Bento Grid**: Dedicated interactive cards for YouTube (@thisdarwin.id9), TikTok (@thisdarwin.id), and Instagram (@thisdarwin.id).
+- **Bento Grid**: Curated interactive cards for GitHub (Offmonprst), Discord, and Spotify (avoiding duplication with the top social dock).
 
 ## Palette & Lighting
 - **Pastel Glass Surface**: `linear-gradient(135deg, rgba(255, 255, 255, 0.72) 0%, rgba(240, 253, 250, 0.52) 100%)`
