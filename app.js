@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let isSoundEnabled = true;
 
   // --- Elements ---
-  const charButtons = document.querySelectorAll('.char-btn');
+  const charButtons = document.querySelectorAll('.liquid-char-btn');
   const characterTitle = document.getElementById('character-name-title');
   const characterSubtitle = document.getElementById('character-subtitle');
   const statusText = document.getElementById('status-text');
@@ -336,9 +336,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Add click sound to interactive comic buttons
-  const comicLinks = document.querySelectorAll('.comic-link-btn');
-  comicLinks.forEach(link => {
+  // Add click sound to interactive liquid glass buttons
+  const liquidLinks = document.querySelectorAll('.liquid-glass-btn');
+  liquidLinks.forEach(link => {
     link.addEventListener('click', () => {
       playCartoonPop(550);
     });
