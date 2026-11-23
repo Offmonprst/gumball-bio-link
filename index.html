@@ -19,21 +19,6 @@
 
   <!-- Top Floating Glass Navigation -->
   <header class="top-liquid-nav" aria-label="Navigasi Pengaturan">
-    <div class="character-glass-dock" role="radiogroup" aria-label="Pilih Karakter Tema">
-      <button type="button" class="liquid-char-btn active" data-char="gumball" aria-checked="true" role="radio" title="Tema Gumball">
-        <span class="char-pill-dot gumball-dot"></span>
-        <span>Gumball</span>
-      </button>
-      <button type="button" class="liquid-char-btn" data-char="darwin" aria-checked="false" role="radio" title="Tema Darwin">
-        <span class="char-pill-dot darwin-dot"></span>
-        <span>Darwin</span>
-      </button>
-      <button type="button" class="liquid-char-btn" data-char="anais" aria-checked="false" role="radio" title="Tema Anais">
-        <span class="char-pill-dot anais-dot"></span>
-        <span>Anais</span>
-      </button>
-    </div>
-
     <button type="button" id="sound-toggle-btn" class="liquid-icon-btn" aria-label="Nyalakan atau matikan efek suara kartun" title="Efek Suara: Nyala">
       <svg viewBox="0 0 24 24" class="liquid-svg" id="sound-svg" aria-hidden="true">
         <path fill="currentColor" d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zm-2.5 9.07L7.83 8.63H4v6.74h3.83l3.67 3.67V12.3zM16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
@@ -57,63 +42,7 @@
       <!-- Avatar with Frosted Glass Halo -->
       <div class="avatar-glass-halo">
         <div class="avatar-inner-frame" id="avatar-display">
-          <!-- Gumball SVG Vector -->
-          <svg class="character-svg svg-gumball" viewBox="0 0 120 120" role="img" aria-label="Avatar Gumball Watterson">
-            <rect width="120" height="120" rx="36" fill="#38BDF8"/>
-            <path d="M 22 28 Q 12 14 34 20" stroke="#0F2942" stroke-width="4" fill="#38BDF8" stroke-linecap="round"/>
-            <path d="M 98 28 Q 108 14 86 20" stroke="#0F2942" stroke-width="4" fill="#38BDF8" stroke-linecap="round"/>
-            <circle cx="60" cy="62" r="42" fill="#38BDF8" stroke="#0F2942" stroke-width="4"/>
-            <ellipse cx="44" cy="54" rx="13" ry="17" fill="#FFFFFF" stroke="#0F2942" stroke-width="3"/>
-            <ellipse cx="76" cy="54" rx="13" ry="17" fill="#FFFFFF" stroke="#0F2942" stroke-width="3"/>
-            <circle cx="48" cy="54" r="6" fill="#0F2942"/>
-            <circle cx="72" cy="54" r="6" fill="#0F2942"/>
-            <circle cx="46" cy="50" r="2.5" fill="#FFFFFF"/>
-            <circle cx="70" cy="50" r="2.5" fill="#FFFFFF"/>
-            <ellipse cx="60" cy="68" rx="8" ry="5.5" fill="#FB923C" stroke="#0F2942" stroke-width="2.5"/>
-            <line x1="24" y1="64" x2="38" y2="67" stroke="#0F2942" stroke-width="2.5" stroke-linecap="round"/>
-            <line x1="22" y1="73" x2="36" y2="73" stroke="#0F2942" stroke-width="2.5" stroke-linecap="round"/>
-            <line x1="96" y1="64" x2="82" y2="67" stroke="#0F2942" stroke-width="2.5" stroke-linecap="round"/>
-            <line x1="98" y1="73" x2="84" y2="73" stroke="#0F2942" stroke-width="2.5" stroke-linecap="round"/>
-            <path d="M 44 80 Q 60 96 76 80" stroke="#0F2942" stroke-width="3.5" fill="#E11D48" stroke-linecap="round"/>
-            <path d="M 50 82 Q 60 86 70 82" stroke="#FFFFFF" stroke-width="3" fill="none" stroke-linecap="round"/>
-            <path d="M 38 104 L 82 104 L 75 120 L 45 120 Z" fill="#FDE047" stroke="#0F2942" stroke-width="2.5"/>
-          </svg>
-
-          <!-- Darwin SVG Vector (Hidden initially) -->
-          <svg class="character-svg svg-darwin hidden" viewBox="0 0 120 120" role="img" aria-label="Avatar Darwin Watterson">
-            <rect width="120" height="120" rx="36" fill="#FB923C"/>
-            <circle cx="60" cy="58" r="42" fill="#FB923C" stroke="#0F2942" stroke-width="4"/>
-            <circle cx="44" cy="50" r="16" fill="#FFFFFF" stroke="#0F2942" stroke-width="3"/>
-            <circle cx="76" cy="50" r="16" fill="#FFFFFF" stroke="#0F2942" stroke-width="3"/>
-            <circle cx="46" cy="50" r="7" fill="#0F2942"/>
-            <circle cx="74" cy="50" r="7" fill="#0F2942"/>
-            <circle cx="44" cy="46" r="3" fill="#FFFFFF"/>
-            <circle cx="72" cy="46" r="3" fill="#FFFFFF"/>
-            <ellipse cx="28" cy="66" rx="7" ry="4" fill="#F43F5E"/>
-            <ellipse cx="92" cy="66" rx="7" ry="4" fill="#F43F5E"/>
-            <path d="M 46 68 Q 60 88 74 68" stroke="#0F2942" stroke-width="3.5" fill="#BE123C" stroke-linecap="round"/>
-            <path d="M 52 70 Q 60 74 68 70" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-            <ellipse cx="44" cy="108" rx="16" ry="9" fill="#34D399" stroke="#0F2942" stroke-width="3"/>
-            <ellipse cx="76" cy="108" rx="16" ry="9" fill="#34D399" stroke="#0F2942" stroke-width="3"/>
-          </svg>
-
-          <!-- Anais SVG Vector (Hidden initially) -->
-          <svg class="character-svg svg-anais hidden" viewBox="0 0 120 120" role="img" aria-label="Avatar Anais Watterson">
-            <rect width="120" height="120" rx="36" fill="#F472B6"/>
-            <path d="M 38 34 Q 30 8 44 6 Q 54 8 48 34" fill="#F472B6" stroke="#0F2942" stroke-width="3.5"/>
-            <path d="M 40 28 Q 36 14 43 12 Q 48 14 45 28" fill="#FCE7F3"/>
-            <path d="M 82 34 Q 74 8 88 6 Q 98 8 92 34" fill="#F472B6" stroke="#0F2942" stroke-width="3.5"/>
-            <path d="M 84 28 Q 80 14 87 12 Q 92 14 89 28" fill="#FCE7F3"/>
-            <circle cx="60" cy="64" r="40" fill="#F472B6" stroke="#0F2942" stroke-width="4"/>
-            <ellipse cx="45" cy="58" rx="12" ry="15" fill="#FFFFFF" stroke="#0F2942" stroke-width="3"/>
-            <ellipse cx="75" cy="58" rx="12" ry="15" fill="#FFFFFF" stroke="#0F2942" stroke-width="3"/>
-            <circle cx="48" cy="58" r="5.5" fill="#0F2942"/>
-            <circle cx="72" cy="58" r="5.5" fill="#0F2942"/>
-            <circle cx="46" cy="55" r="2" fill="#FFFFFF"/>
-            <circle cx="70" cy="55" r="2" fill="#FFFFFF"/>
-            <circle cx="60" cy="70" r="4.5" fill="#FB923C" stroke="#0F2942" stroke-width="2"/>
-            <path d="M 50 82 Q 60 92 70 82" stroke="#0F2942" stroke-width="3" fill="none" stroke-linecap="round"/>
-          </svg>
+          <img src="assets/profile.jpg" alt="Foto Profil" class="profile-avatar-img">
         </div>
       </div>
 

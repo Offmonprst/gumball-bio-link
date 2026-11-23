@@ -68,11 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let isSoundEnabled = true;
 
   // --- Elements ---
-  const charButtons = document.querySelectorAll('.liquid-char-btn');
-  const characterTitle = document.getElementById('character-name-title');
-  const characterSubtitle = document.getElementById('character-subtitle');
-  const statusText = document.getElementById('status-text');
-  const svgs = document.querySelectorAll('.character-svg');
   const soundToggleBtn = document.getElementById('sound-toggle-btn');
   const soundSvg = document.getElementById('sound-svg');
   const soundIconOnPath = 'M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zm-2.5 9.07L7.83 8.63H4v6.74h3.83l3.67 3.67V12.3zM16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z';
@@ -184,42 +179,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-
-  // --- Character Switcher Handler ---
-  charButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const charKey = btn.getAttribute('data-char');
-      const data = characters[charKey];
-      if (!data) return;
-
-      // Update Body Theme Attribute
-      document.body.setAttribute('data-character', charKey);
-
-      // Update Buttons Active State
-      charButtons.forEach(b => {
-        b.classList.remove('active');
-        b.setAttribute('aria-checked', 'false');
-      });
-      btn.classList.add('active');
-      btn.setAttribute('aria-checked', 'true');
-
-      // Update Profile Details
-      if (characterTitle) characterTitle.textContent = data.name;
-      if (characterSubtitle) characterSubtitle.textContent = data.subtitle;
-      if (statusText) statusText.textContent = data.status;
-
-      // Update SVG Avatar
-      svgs.forEach(svg => {
-        if (svg.classList.contains(data.avatarClass)) {
-          svg.classList.remove('hidden');
-        } else {
-          svg.classList.add('hidden');
-        }
-      });
-
-      playBoingSound();
-    });
-  });
 
   // --- Quote Generator Handler ---
   if (nextQuoteBtn) {
