@@ -528,8 +528,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: darwin-bob-step 0.32s ease-in-out infinite alternate;
-  will-change: transform;
 }
 
 .darwin-walker-picture {
@@ -538,19 +536,14 @@ body {
 }
 
 .darwin-official-walker-img {
-  width: 170px;
+  width: 175px;
   height: auto;
-  max-height: 242px;
+  max-height: 245px;
   object-fit: contain;
-  filter: drop-shadow(0 10px 24px rgba(12, 74, 110, 0.24));
+  filter: drop-shadow(0 12px 24px rgba(12, 74, 110, 0.22));
   image-rendering: auto;
   user-select: none;
   pointer-events: none;
-}
-
-@keyframes darwin-bob-step {
-  0% { transform: translateY(0px) rotate(-1deg); }
-  100% { transform: translateY(-6px) rotate(1deg); }
 }
 
 /* Floor Contact Shadow */
@@ -563,13 +556,13 @@ body {
   height: 14px;
   border-radius: 50%;
   background: radial-gradient(ellipse at center, rgba(12, 74, 110, 0.38) 0%, transparent 72%);
-  animation: darwin-shadow-step 0.32s ease-in-out infinite alternate;
+  animation: darwin-shadow-step 0.34s ease-in-out infinite alternate;
   z-index: 1;
 }
 
 @keyframes darwin-shadow-step {
   0% { transform: translateX(-50%) scaleX(1) scaleY(1); opacity: 0.85; }
-  100% { transform: translateX(-50%) scaleX(0.8) scaleY(0.68); opacity: 0.48; }
+  100% { transform: translateX(-50%) scaleX(0.85) scaleY(0.75); opacity: 0.6; }
 }
 
 /* Moving Frosted Glass Treadmill Track */
