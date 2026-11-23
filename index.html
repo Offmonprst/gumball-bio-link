@@ -8,10 +8,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=corners-fixed">
+  <link rel="stylesheet" href="styles.css?v=frameless-large">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%2338BDF8' stroke='%23FFFFFF' stroke-width='4'/><circle cx='38' cy='42' r='8' fill='%23FFFFFF'/><circle cx='62' cy='42' r='8' fill='%23FFFFFF'/><circle cx='40' cy='42' r='4' fill='%230F2942'/><circle cx='60' cy='42' r='4' fill='%230F2942'/><ellipse cx='50' cy='54' rx='6' ry='4' fill='%2334D399'/><path d='M 38 66 Q 50 78 62 66' stroke='%230F2942' stroke-width='4' fill='none' stroke-linecap='round'/></svg>">
   <style>
-    /* Critical Corner Positioning (Guarantees 4 Screen Corners regardless of cache) */
+    /* Critical Corner Positioning: Frameless Large Characters in 4 Corners */
     .corner-darwins-container {
       pointer-events: none;
     }
@@ -20,26 +20,40 @@
       z-index: 9999 !important;
       pointer-events: auto !important;
     }
-    .corner-tl { top: 20px !important; left: 20px !important; }
-    .corner-tr { top: 20px !important; right: 20px !important; }
-    .corner-bl { bottom: 20px !important; left: 20px !important; }
-    .corner-br { bottom: 20px !important; right: 20px !important; }
+    .corner-tl { top: 16px !important; left: 16px !important; }
+    .corner-tr { top: 16px !important; right: 16px !important; }
+    .corner-bl { bottom: 16px !important; left: 16px !important; }
+    .corner-br { bottom: 16px !important; right: 16px !important; }
+
+    .corner-darwin-btn {
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      cursor: pointer !important;
+      outline: none !important;
+      display: block !important;
+    }
+
+    /* Desktop Sizing (Large & Expressive) */
+    .corner-tl .corner-darwin-img { width: 140px !important; height: auto !important; max-height: 180px !important; }
+    .corner-tr .corner-darwin-img { width: 190px !important; height: auto !important; max-height: 120px !important; }
+    .corner-bl .corner-darwin-img { width: 135px !important; height: auto !important; max-height: 190px !important; }
+    .corner-br .corner-darwin-img { width: 170px !important; height: auto !important; max-height: 180px !important; }
 
     @media (max-width: 768px) {
-      .corner-tl { top: 10px !important; left: 10px !important; }
-      .corner-tr { top: 10px !important; right: 10px !important; }
-      .corner-bl { bottom: 12px !important; left: 10px !important; }
-      .corner-br { bottom: 12px !important; right: 10px !important; }
-      .corner-darwin-btn {
-        width: 50px !important;
-        height: 50px !important;
-        min-height: 44px !important;
-        min-width: 44px !important;
-        padding: 4px !important;
-        border-radius: 16px !important;
-      }
+      .corner-tl { top: 8px !important; left: 8px !important; }
+      .corner-tr { top: 8px !important; right: 8px !important; }
+      .corner-bl { bottom: 10px !important; left: 8px !important; }
+      .corner-br { bottom: 10px !important; right: 8px !important; }
+
+      .corner-tl .corner-darwin-img { width: 72px !important; height: auto !important; max-height: 85px !important; }
+      .corner-tr .corner-darwin-img { width: 88px !important; height: auto !important; max-height: 65px !important; }
+      .corner-bl .corner-darwin-img { width: 70px !important; height: auto !important; max-height: 88px !important; }
+      .corner-br .corner-darwin-img { width: 82px !important; height: auto !important; max-height: 85px !important; }
+
       .top-liquid-nav {
-        padding-right: 52px !important;
+        padding-right: 76px !important;
       }
     }
   </style>
@@ -50,37 +64,33 @@
   <!-- Soft Luminous Wallpaper Scrim -->
   <div class="wallpaper-scrim" aria-hidden="true"></div>
 
-  <!-- 4 Screen Corner Darwin Stickers -->
+  <!-- 4 Screen Corner Darwin Stickers (Frameless Cutouts) -->
   <aside class="corner-darwins-container" aria-label="Dekorasi Karakter si Darwin di Empat Sudut Layar">
     <!-- Sudut Kiri Atas -->
     <div class="corner-darwin corner-tl">
       <button type="button" class="corner-darwin-btn" aria-label="Karakter Darwin di sudut kiri atas" title="Darwin: Halo dari sudut kiri atas!" data-corner="tl">
-        <div class="corner-glass-specular" aria-hidden="true"></div>
-        <img src="assets/darwin-corner-3.png" alt="Darwin melambaikan tangan di sudut kiri atas" class="corner-darwin-img" width="120" height="160">
+        <img src="assets/darwin-corner-3.png" alt="Darwin melambaikan tangan di sudut kiri atas" class="corner-darwin-img" width="256" height="340">
       </button>
     </div>
 
     <!-- Sudut Kanan Atas -->
     <div class="corner-darwin corner-tr">
       <button type="button" class="corner-darwin-btn" aria-label="Karakter Darwin di sudut kanan atas" title="Darwin: Mengintip dari sudut kanan atas!" data-corner="tr">
-        <div class="corner-glass-specular" aria-hidden="true"></div>
-        <img src="assets/darwin-corner-4.png" alt="Darwin bersantai di sudut kanan atas" class="corner-darwin-img" width="160" height="94">
+        <img src="assets/darwin-corner-4.png" alt="Darwin bersantai di sudut kanan atas" class="corner-darwin-img" width="480" height="280">
       </button>
     </div>
 
     <!-- Sudut Kiri Bawah -->
     <div class="corner-darwin corner-bl">
       <button type="button" class="corner-darwin-btn" aria-label="Karakter Darwin di sudut kiri bawah" title="Darwin: Berdiri santai di sudut kiri bawah!" data-corner="bl">
-        <div class="corner-glass-specular" aria-hidden="true"></div>
-        <img src="assets/darwin-corner-1.png" alt="Darwin berdiri santai di sudut kiri bawah" class="corner-darwin-img" width="117" height="160">
+        <img src="assets/darwin-corner-1.png" alt="Darwin berdiri santai di sudut kiri bawah" class="corner-darwin-img" width="320" height="436">
       </button>
     </div>
 
     <!-- Sudut Kanan Bawah -->
     <div class="corner-darwin corner-br">
       <button type="button" class="corner-darwin-btn" aria-label="Karakter Darwin di sudut kanan bawah" title="Darwin: Melompat ceria di sudut kanan bawah!" data-corner="br">
-        <div class="corner-glass-specular" aria-hidden="true"></div>
-        <img src="assets/darwin-corner-2.png" alt="Darwin melompat gembira di sudut kanan bawah" class="corner-darwin-img" width="157" height="160">
+        <img src="assets/darwin-corner-2.png" alt="Darwin melompat gembira di sudut kanan bawah" class="corner-darwin-img" width="472" height="480">
       </button>
     </div>
   </aside>
@@ -265,6 +275,6 @@
     <span id="toast-message">Tautan berhasil disalin ke papan klip!</span>
   </div>
 
-  <script src="app.js?v=corners-fixed"></script>
+  <script src="app.js?v=frameless-large"></script>
 </body>
 </html>

@@ -26,9 +26,10 @@
   - Top-Right: slides in from offscreen top-right with spring bounce (0.28s delay)
   - Bottom-Left: slides in from offscreen bottom-left with spring bounce (0.42s delay)
   - Bottom-Right: slides in from offscreen bottom-right with spring bounce (0.55s delay)
-- **Corner Fitting & Responsiveness**:
-  - Desktop (> 768px): fixed 92px frosted liquid glass pods with specular rim highlight, seated at each of the 4 outer screen corners.
-  - Mobile (<= 768px): compact 50px pods at the screen corners with safe padding preventing collision with navigation buttons.
+- **Frameless Design & Enhanced Size**:
+  - Completely removed boxes, borders, and square backgrounds for pure character cutouts.
+  - Desktop (> 768px): enlarged to 140px - 190px for high visibility and expressive presence.
+  - Mobile (<= 768px): enlarged to 72px - 88px with clean drop-shadow and non-obstructive safe margins.
 - **Interactions**: Interactive spring wobble animation, distinct audio pitches, and unique Elmore reaction toasts on click.
 
 ## Palette & Lighting

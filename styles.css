@@ -1147,143 +1147,106 @@ body {
 }
 
 /* Liquid Glass Corner Pod Button */
+/* Frameless Transparent Darwin Button (No boxes) */
 .corner-darwin-btn {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 92px;
-  height: 92px;
-  padding: 6px;
-  background: rgba(255, 255, 255, 0.74);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1.5px solid rgba(255, 255, 255, 0.95);
-  border-radius: 26px;
-  box-shadow: 0 8px 24px rgba(12, 74, 110, 0.12), inset 0 1px 1px rgba(255, 255, 255, 0.95);
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
   cursor: pointer;
-  transition: transform var(--transition-bounce), box-shadow var(--transition-smooth), border-color var(--transition-smooth), background var(--transition-smooth);
+  display: block;
   outline: none;
-}
-
-.corner-glass-specular {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 45%;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.05) 100%);
-  border-radius: 26px 26px 60% 60% / 20px 20px 10px 10px;
-  pointer-events: none;
-  z-index: 1;
+  transition: transform var(--transition-bounce);
 }
 
 .corner-darwin-img {
-  max-width: 100%;
-  max-height: 100%;
+  display: block;
   object-fit: contain;
-  filter: drop-shadow(0 4px 8px rgba(12, 74, 110, 0.16));
-  transition: transform var(--transition-bounce);
+  filter: drop-shadow(0 6px 18px rgba(12, 74, 110, 0.28));
+  transition: transform var(--transition-bounce), filter var(--transition-smooth);
   pointer-events: none;
-  position: relative;
-  z-index: 2;
 }
 
-/* Individual Corner Playful Tilts & Ambient Pastels */
-.corner-tl .corner-darwin-btn:hover {
-  transform: translateY(3px) translateX(3px) scale(1.08);
-  border-color: rgba(56, 189, 248, 0.7);
-  box-shadow: 0 12px 28px rgba(56, 189, 248, 0.22);
-}
+/* Desktop Sizing: Extra Large & Expressive */
 .corner-tl .corner-darwin-img {
+  width: 140px;
+  height: auto;
+  max-height: 180px;
   transform: rotate(-3deg);
 }
 
-.corner-tr .corner-darwin-btn:hover {
-  transform: translateY(3px) translateX(-3px) scale(1.08);
-  border-color: rgba(52, 211, 153, 0.7);
-  box-shadow: 0 12px 28px rgba(52, 211, 153, 0.22);
-}
 .corner-tr .corner-darwin-img {
+  width: 190px;
+  height: auto;
+  max-height: 120px;
   transform: rotate(4deg);
 }
 
-.corner-bl .corner-darwin-btn:hover {
-  transform: translateY(-3px) translateX(3px) scale(1.08);
-  border-color: rgba(244, 114, 182, 0.7);
-  box-shadow: 0 12px 28px rgba(244, 114, 182, 0.22);
-}
 .corner-bl .corner-darwin-img {
+  width: 135px;
+  height: auto;
+  max-height: 190px;
   transform: rotate(3deg);
 }
 
-.corner-br .corner-darwin-btn:hover {
-  transform: translateY(-3px) translateX(-3px) scale(1.08);
-  border-color: rgba(245, 158, 11, 0.7);
-  box-shadow: 0 12px 28px rgba(245, 158, 11, 0.22);
-}
 .corner-br .corner-darwin-img {
+  width: 170px;
+  height: auto;
+  max-height: 180px;
   transform: rotate(-4deg);
 }
 
-.corner-darwin-btn:active {
-  transform: scale(0.96);
+/* Hover Interactions: Lift & Glow */
+.corner-darwin-btn:hover .corner-darwin-img {
+  transform: scale(1.12) rotate(0deg);
+  filter: drop-shadow(0 10px 24px rgba(249, 115, 22, 0.45));
+}
+
+.corner-darwin-btn:active .corner-darwin-img {
+  transform: scale(0.95);
 }
 
 .corner-darwin-btn:focus-visible {
-  outline: 2px solid var(--pastel-blue);
-  outline-offset: 2px;
+  outline: 3px solid var(--pastel-blue);
+  outline-offset: 4px;
+  border-radius: 12px;
 }
 
 /* Click Wobble Animation */
-.sticker-wobble {
+.sticker-wobble .corner-darwin-img {
   animation: sticker-pop-wobble 0.45s ease-in-out;
 }
 
 @keyframes sticker-pop-wobble {
   0% { transform: scale(1); }
-  35% { transform: scale(1.2) rotate(-8deg); }
-  65% { transform: scale(1.1) rotate(6deg); }
+  35% { transform: scale(1.22) rotate(-10deg); }
+  65% { transform: scale(1.12) rotate(8deg); }
   100% { transform: scale(1) rotate(0deg); }
 }
 
-/* Mobile Screens: Compact & Non-Obstructive */
+/* Tablet Screens (769px - 860px) */
+@media (min-width: 769px) and (max-width: 860px) {
+  .corner-tl .corner-darwin-img { width: 110px; }
+  .corner-tr .corner-darwin-img { width: 140px; }
+  .corner-bl .corner-darwin-img { width: 105px; }
+  .corner-br .corner-darwin-img { width: 130px; }
+}
+
+/* Mobile Screens (<= 768px): Clear, Larger & Non-Obstructive */
 @media (max-width: 768px) {
-  .corner-tl {
-    top: 10px;
-    left: 10px;
-  }
-  .corner-tr {
-    top: 10px;
-    right: 10px;
-  }
-  .corner-bl {
-    bottom: 12px;
-    left: 10px;
-  }
-  .corner-br {
-    bottom: 12px;
-    right: 10px;
-  }
+  .corner-tl { top: 8px; left: 8px; }
+  .corner-tr { top: 8px; right: 8px; }
+  .corner-bl { bottom: 10px; left: 8px; }
+  .corner-br { bottom: 10px; right: 8px; }
 
-  .corner-darwin-btn {
-    width: 50px;
-    height: 50px;
-    min-height: 44px;
-    min-width: 44px;
-    padding: 4px;
-    border-radius: 16px;
-    box-shadow: 0 4px 14px rgba(12, 74, 110, 0.12);
-  }
+  .corner-tl .corner-darwin-img { width: 72px; height: auto; max-height: 85px; }
+  .corner-tr .corner-darwin-img { width: 88px; height: auto; max-height: 65px; }
+  .corner-bl .corner-darwin-img { width: 70px; height: auto; max-height: 88px; }
+  .corner-br .corner-darwin-img { width: 82px; height: auto; max-height: 85px; }
 
-  .corner-glass-specular {
-    border-radius: 16px 16px 60% 60% / 14px 14px 8px 8px;
-  }
-
-  /* Prevent sound button collision with top-right corner */
+  /* Keep sound toggle button clear of top-right character */
   .top-liquid-nav {
-    padding-right: 50px;
+    padding-right: 76px;
   }
 }
 
