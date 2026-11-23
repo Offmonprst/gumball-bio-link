@@ -296,7 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Add click sound to interactive liquid glass buttons
-  const liquidLinks = document.querySelectorAll('.liquid-glass-btn');
+  const liquidLinks = document.querySelectorAll('.liquid-glass-btn, .social-pill-btn');
   liquidLinks.forEach(link => {
     link.addEventListener('click', () => {
       playCartoonPop(550);

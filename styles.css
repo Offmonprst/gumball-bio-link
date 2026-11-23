@@ -412,7 +412,7 @@ body {
   z-index: 2;
 }
 
-/* Glass Status Capsule */
+/* Glass Status Capsule (Legacy fallback) */
 .glass-status-capsule {
   display: inline-flex;
   align-items: center;
@@ -442,6 +442,96 @@ body {
 @keyframes pulse-soft {
   0%, 100% { transform: scale(1); opacity: 1; }
   50% { transform: scale(1.35); opacity: 0.65; }
+}
+
+/* Hero Liquid Glass Social Media Quick Links */
+.hero-social-dock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+  margin-top: 6px;
+  width: 100%;
+}
+
+.social-pill-btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  min-height: 44px;
+  min-width: 44px;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  border-radius: var(--radius-pill);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(12, 74, 110, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.95);
+  transition: transform var(--transition-bounce), box-shadow var(--transition-smooth), border-color var(--transition-smooth), background var(--transition-smooth);
+}
+
+.social-pill-btn .social-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  transition: transform var(--transition-bounce);
+}
+
+.social-pill-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 22px rgba(12, 74, 110, 0.14), inset 0 1px 2px rgba(255, 255, 255, 1);
+}
+
+.social-pill-btn:hover .social-icon {
+  transform: scale(1.15) rotate(-4deg);
+}
+
+.social-pill-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.social-pill-btn:focus-visible {
+  outline: 2px solid var(--pastel-blue);
+  outline-offset: 2px;
+}
+
+/* Individual Brand Ambient Pastels */
+.pill-ig:hover {
+  border-color: rgba(217, 70, 239, 0.6);
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 8px 22px rgba(217, 70, 239, 0.2), inset 0 1px 2px rgba(255, 255, 255, 1);
+}
+.pill-ig .social-icon {
+  color: #C026D3;
+}
+
+.pill-tt:hover {
+  border-color: rgba(16, 185, 129, 0.6);
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 8px 22px rgba(16, 185, 129, 0.2), inset 0 1px 2px rgba(255, 255, 255, 1);
+}
+.pill-tt .social-icon {
+  color: #059669;
+}
+
+.pill-yt:hover {
+  border-color: rgba(239, 68, 68, 0.6);
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 8px 22px rgba(239, 68, 68, 0.2), inset 0 1px 2px rgba(255, 255, 255, 1);
+}
+.pill-yt .social-icon {
+  color: #DC2626;
 }
 
 /* ==========================================================================
@@ -561,6 +651,16 @@ body {
   font-weight: 800;
   background: var(--pastel-mint-light);
   color: var(--pastel-mint-dark);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.pastel-badge-rose {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 800;
+  background: rgba(254, 226, 226, 0.95);
+  color: #B91C1C;
   padding: 4px 10px;
   border-radius: var(--radius-pill);
 }

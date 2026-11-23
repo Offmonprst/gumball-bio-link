@@ -8,8 +8,12 @@
 
 ## Wallpaper Configuration
 - **Desktop**: `assets/bg-desktop.jpg` (Darwin Sticker Collage, compressed from 3.0 MB to 378 KB, 1920x960 progressive JPEG)
-- **Mobile**: `assets/bg-mobile.jpg` (Vertical portrait 1080x1920 for mobile devices <= 768px)
+- **Mobile**: `assets/bg-mobile.jpg` (Vertical portrait 1080x1920 for mobile screens <= 768px, high definition progressive JPEG)
 - **Backdrop Scrim**: Luminous pastel blur veil to guarantee contrast and soft serene lighting across the vibrant wallpaper.
+
+## Social Media Dock & Quick Links
+- **Hero Dock**: Replaced status pill with frosted liquid glass pill buttons for Instagram (@thisdarwin.id), TikTok (@thisdarwin.id), and YouTube (@thisdarwin.id9).
+- **Bento Grid**: Dedicated interactive cards for YouTube (@thisdarwin.id9), TikTok (@thisdarwin.id), and Instagram (@thisdarwin.id).
 
 ## Palette & Lighting
 - **Pastel Glass Surface**: `linear-gradient(135deg, rgba(255, 255, 255, 0.72) 0%, rgba(240, 253, 250, 0.52) 100%)`
