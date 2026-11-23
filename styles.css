@@ -1047,6 +1047,142 @@ body {
   to { transform: translateX(-50%) translateY(0); opacity: 1; }
 }
 
+/* ==========================================================================
+   DARWIN CHARACTER CORNER CLUSTER
+   ========================================================================== */
+.darwin-corner-cluster {
+  position: relative;
+  overflow: hidden;
+  background: var(--liquid-glass-bg);
+  backdrop-filter: blur(24px) saturate(190%) brightness(104%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%) brightness(104%);
+  border: var(--liquid-glass-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--soft-shadow);
+  padding: 14px 14px 12px;
+  width: 100%;
+  max-width: 280px;
+  margin: 10px 0 6px;
+  transition: transform var(--transition-bounce), box-shadow var(--transition-smooth);
+}
+
+.darwin-corner-cluster:hover {
+  box-shadow: var(--glow-shadow);
+}
+
+.darwin-corner-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+  padding-left: 2px;
+  position: relative;
+  z-index: 2;
+}
+
+.darwin-corner-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--pastel-mint);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--pastel-mint);
+  animation: pulse-soft 2.2s infinite ease-in-out;
+}
+
+.darwin-corner-title {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+}
+
+.darwin-stickers-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  position: relative;
+  z-index: 2;
+}
+
+.darwin-sticker-btn {
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 8px 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  height: 82px;
+  box-shadow: 0 2px 8px rgba(12, 74, 110, 0.06);
+  transition: transform var(--transition-bounce), box-shadow var(--transition-smooth), background var(--transition-smooth), border-color var(--transition-smooth);
+  position: relative;
+  outline: none;
+}
+
+.darwin-sticker-btn:hover {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(56, 189, 248, 0.6);
+  box-shadow: 0 8px 20px rgba(12, 74, 110, 0.14);
+}
+
+.darwin-sticker-btn:active {
+  transform: scale(0.95);
+}
+
+.darwin-sticker-btn:focus-visible {
+  outline: 2px solid var(--pastel-blue);
+  outline-offset: 2px;
+}
+
+.darwin-sticker-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 6px rgba(12, 74, 110, 0.15));
+  transition: transform var(--transition-bounce);
+  pointer-events: none;
+}
+
+/* Individual playful sticker tilt */
+.sticker-1 .darwin-sticker-img { transform: rotate(-3deg); }
+.sticker-2 .darwin-sticker-img { transform: rotate(4deg); }
+.sticker-3 .darwin-sticker-img { transform: rotate(-2deg); }
+.sticker-4 .darwin-sticker-img { transform: rotate(3deg); }
+
+.darwin-sticker-btn:hover .darwin-sticker-img {
+  transform: scale(1.15) rotate(0deg);
+}
+
+.sticker-wobble {
+  animation: sticker-pop-wobble 0.45s ease-in-out;
+}
+
+@keyframes sticker-pop-wobble {
+  0% { transform: scale(1); }
+  35% { transform: scale(1.22) rotate(-6deg); }
+  65% { transform: scale(1.12) rotate(4deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+/* Desktop screen positioning: Fixed gracefully at bottom-left corner */
+@media (min-width: 821px) {
+  .darwin-corner-cluster {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    width: 172px;
+    margin: 0;
+    z-index: 60;
+  }
+
+  .darwin-sticker-btn {
+    height: 72px;
+  }
+}
+
 /* Reduced Motion Preference (Accessibility) */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

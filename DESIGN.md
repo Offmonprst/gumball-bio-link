@@ -15,6 +15,15 @@
 - **Hero Dock**: Replaced status pill with frosted liquid glass pill buttons for Instagram (@thisdarwin.id), TikTok (@thisdarwin.id), and YouTube (@thisdarwin.id9).
 - **Bento Grid**: Curated interactive cards for GitHub (Offmonprst), Discord, and Spotify (avoiding duplication with the top social dock).
 
+## Darwin Character Corner (Sudut si Darwin)
+- **4 Distinct Poses**:
+  1. Darwin Standing with iconic green shoes (assets/darwin-corner-1.png)
+  2. Darwin Jumping happily with arms outstretched (assets/darwin-corner-2.png)
+  3. Darwin Smiling warmly and waving (assets/darwin-corner-3.png)
+  4. Darwin Lying down cheerfully (assets/darwin-corner-4.png)
+- **Positioning**: Fixed in bottom-left corner on desktop screens (> 820px); seamlessly integrated at the bottom of the container on mobile devices without obstructing any tap targets.
+- **Interactions**: Interactive wobble animation, individual cartoon audio frequencies, and uplifting speech toasts when clicked.
+
 ## Palette & Lighting
 - **Pastel Glass Surface**: `linear-gradient(135deg, rgba(255, 255, 255, 0.72) 0%, rgba(240, 253, 250, 0.52) 100%)`
 - **Pastel Cyan**: `#38BDF8` / `#0284C7` (Sky blue accent)

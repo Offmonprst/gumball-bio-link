@@ -302,4 +302,29 @@ document.addEventListener('DOMContentLoaded', () => {
       playCartoonPop(550);
     });
   });
+
+  // Darwin Corner Stickers Interaction
+  const stickerButtons = document.querySelectorAll('.darwin-sticker-btn');
+  const stickerSounds = [620, 750, 560, 480];
+  const stickerReactions = [
+    'Darwin: Halo teman-teman! Senang bertemu kalian! ✨',
+    'Darwin: Semangat! Tetap tersenyum hari ini! 🌟',
+    'Darwin: Sahabat sejati selalu ada bersama! 🐟',
+    'Darwin: Santai sejenak dan nikmati harimu! 🍀'
+  ];
+
+  stickerButtons.forEach((btn, idx) => {
+    btn.addEventListener('click', () => {
+      const freq = stickerSounds[idx] || 550;
+      playCartoonPop(freq, 'triangle');
+
+      btn.classList.remove('sticker-wobble');
+      void btn.offsetWidth;
+      btn.classList.add('sticker-wobble');
+
+      if (typeof showToast === 'function' && stickerReactions[idx]) {
+        showToast(stickerReactions[idx]);
+      }
+    });
+  });
 });
