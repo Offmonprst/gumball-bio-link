@@ -1394,6 +1394,30 @@ body {
   gap: 10px;
   position: relative;
   z-index: 2;
+  max-height: 235px;
+  overflow-y: auto;
+  padding-right: 6px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(56, 189, 248, 0.45) transparent;
+  overscroll-behavior: contain;
+}
+
+.biodata-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.biodata-list::-webkit-scrollbar-track {
+  background: rgba(15, 41, 66, 0.05);
+  border-radius: 10px;
+}
+
+.biodata-list::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.5);
+  border-radius: 10px;
+}
+
+.biodata-list::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
 }
 
 .biodata-row {
