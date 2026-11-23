@@ -513,96 +513,44 @@ body {
 
 .loading-darwin-stage {
   position: relative;
-  width: 200px;
-  height: 220px;
+  width: 220px;
+  height: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
-/* Pure HTML / SVG Vector Walker Character */
-.darwin-character-svg {
-  width: 165px;
-  height: auto;
-  filter: drop-shadow(0 8px 22px rgba(12, 74, 110, 0.22));
+/* Authentic Official Cartoon Network Darwin Walker */
+.darwin-actor-wrap {
   position: relative;
   z-index: 2;
-  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: darwin-bob-step 0.32s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
-/* Body & Head Step Bob */
-.darwin-body-head {
-  animation: darwin-body-step 0.35s ease-in-out infinite alternate;
-  transform-origin: 110px 145px;
+.darwin-walker-picture {
+  display: block;
+  line-height: 0;
 }
 
-@keyframes darwin-body-step {
-  0% { transform: translateY(0px) rotate(-1.5deg); }
-  100% { transform: translateY(-7px) rotate(1.5deg); }
+.darwin-official-walker-img {
+  width: 170px;
+  height: auto;
+  max-height: 242px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 24px rgba(12, 74, 110, 0.24));
+  image-rendering: auto;
+  user-select: none;
+  pointer-events: none;
 }
 
-/* Front Leg Swing */
-.darwin-leg-front {
-  animation: darwin-leg-front-walk 0.7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  transform-origin: 89px 145px;
-}
-
-@keyframes darwin-leg-front-walk {
-  0% { transform: rotate(-24deg); }
-  25% { transform: rotate(0deg) translateY(-4px); }
-  50% { transform: rotate(26deg) translateY(0); }
-  75% { transform: rotate(4deg) translateY(-2px); }
-  100% { transform: rotate(-24deg); }
-}
-
-/* Back Leg Swing (Opposite Phase) */
-.darwin-leg-back {
-  animation: darwin-leg-back-walk 0.7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  transform-origin: 123px 145px;
-}
-
-@keyframes darwin-leg-back-walk {
-  0% { transform: rotate(26deg); }
-  25% { transform: rotate(4deg) translateY(-2px); }
-  50% { transform: rotate(-24deg) translateY(0); }
-  75% { transform: rotate(0deg) translateY(-4px); }
-  100% { transform: rotate(26deg); }
-}
-
-/* Front Arm Swing */
-.darwin-arm-front {
-  animation: darwin-arm-front-swing 0.7s ease-in-out infinite;
-  transform-origin: 154px 96px;
-}
-
-@keyframes darwin-arm-front-swing {
-  0% { transform: rotate(22deg); }
-  50% { transform: rotate(-22deg); }
-  100% { transform: rotate(22deg); }
-}
-
-/* Back Arm Swing */
-.darwin-arm-back {
-  animation: darwin-arm-back-swing 0.7s ease-in-out infinite;
-  transform-origin: 50px 96px;
-}
-
-@keyframes darwin-arm-back-swing {
-  0% { transform: rotate(-22deg); }
-  50% { transform: rotate(22deg); }
-  100% { transform: rotate(-22deg); }
-}
-
-/* Tail Fin Wag */
-.darwin-tail-fin {
-  animation: darwin-tail-wag 0.4s ease-in-out infinite alternate;
-  transform-origin: 56px 115px;
-}
-
-@keyframes darwin-tail-wag {
-  0% { transform: rotate(-8deg); }
-  100% { transform: rotate(10deg); }
+@keyframes darwin-bob-step {
+  0% { transform: translateY(0px) rotate(-1deg); }
+  100% { transform: translateY(-6px) rotate(1deg); }
 }
 
 /* Floor Contact Shadow */
@@ -611,17 +559,17 @@ body {
   bottom: 8px;
   left: 50%;
   transform: translateX(-50%);
-  width: 96px;
-  height: 12px;
+  width: 108px;
+  height: 14px;
   border-radius: 50%;
-  background: radial-gradient(ellipse at center, rgba(12, 74, 110, 0.3) 0%, transparent 70%);
-  animation: darwin-shadow-step 0.35s ease-in-out infinite alternate;
+  background: radial-gradient(ellipse at center, rgba(12, 74, 110, 0.38) 0%, transparent 72%);
+  animation: darwin-shadow-step 0.32s ease-in-out infinite alternate;
   z-index: 1;
 }
 
 @keyframes darwin-shadow-step {
-  0% { transform: translateX(-50%) scaleX(1) scaleY(1); opacity: 0.8; }
-  100% { transform: translateX(-50%) scaleX(0.8) scaleY(0.65); opacity: 0.45; }
+  0% { transform: translateX(-50%) scaleX(1) scaleY(1); opacity: 0.85; }
+  100% { transform: translateX(-50%) scaleX(0.8) scaleY(0.68); opacity: 0.48; }
 }
 
 /* Moving Frosted Glass Treadmill Track */
