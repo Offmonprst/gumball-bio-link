@@ -303,7 +303,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 4 Screen Corners Darwin Character Interaction
+  // 4 Screen Corners Darwin Character Interaction & Slide-In Trigger
+  const cornerContainer = document.querySelector('.corner-darwins-container');
+  if (cornerContainer) {
+    setTimeout(() => {
+      cornerContainer.classList.add('corners-active');
+    }, 150);
+  }
+
   const cornerDarwinButtons = document.querySelectorAll('.corner-darwin-btn');
   const cornerSounds = {
     tl: 640,

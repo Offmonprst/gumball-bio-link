@@ -11,9 +11,10 @@
 - **Mobile**: `assets/bg-mobile.jpg` (Vertical portrait 1080x1920 for mobile screens <= 768px, high definition progressive JPEG)
 - **Backdrop Scrim**: Luminous pastel blur veil to guarantee contrast and soft serene lighting across the vibrant wallpaper.
 
-## Social Media Dock & Quick Links
+## Social Media Dock, Quick Links & Spotify Player
 - **Hero Dock**: Replaced status pill with frosted liquid glass pill buttons for Instagram (@thisdarwin.id), TikTok (@thisdarwin.id), and YouTube (@thisdarwin.id9).
-- **Bento Grid**: Curated interactive cards for GitHub (Offmonprst), Discord, and Spotify (avoiding duplication with the top social dock).
+- **Embedded Spotify Player**: Added an interactive Spotify track embed widget under the profile card for song "China Timur" (track `0xbPLWeY6twRh7xUDu0PU8`), playable directly in the web browser with Serene Liquid Glass frame, frosted specular highlights, and pastel green badge.
+- **Bento Grid**: Curated interactive cards for GitHub (Offmonprst), Discord, and direct Spotify track link.
 
 ## 4 Screen Corners Darwin Characters
 - **4 Distinct Poses in 4 Corners**:
@@ -21,15 +22,18 @@
   2. Top-Right Corner: Darwin Lying down cheerfully and peeking (assets/darwin-corner-4.png)
   3. Bottom-Left Corner: Darwin Standing proudly with green shoes (assets/darwin-corner-1.png)
   4. Bottom-Right Corner: Darwin Jumping with open arms (assets/darwin-corner-2.png)
-- **Initial Slide-In Transition**:
-  - Top-Left: slides in from offscreen top-left with spring bounce (0.15s delay)
-  - Top-Right: slides in from offscreen top-right with spring bounce (0.28s delay)
-  - Bottom-Left: slides in from offscreen bottom-left with spring bounce (0.42s delay)
-  - Bottom-Right: slides in from offscreen bottom-right with spring bounce (0.55s delay)
-- **Frameless Design & Enhanced Size**:
+- **Spring Slide-In Transition (Guaranteed Visible)**:
+  - Initial off-screen positioning outside all four screen edges.
+  - Triggered with deliberate entry delay once page paints (via CSS keyframe fallback + DOM/load activation).
+  - Top-Left: slides in from offscreen top-left with spring bounce (0.10s delay).
+  - Top-Right: slides in from offscreen top-right with spring bounce (0.25s delay).
+  - Bottom-Left: slides in from offscreen bottom-left with spring bounce (0.40s delay).
+  - Bottom-Right: slides in from offscreen bottom-right with spring bounce (0.55s delay).
+- **Frameless Cutouts & Extra-Large Sizing**:
   - Completely removed boxes, borders, and square backgrounds for pure character cutouts.
-  - Desktop (> 768px): enlarged to 140px - 190px for high visibility and expressive presence.
-  - Mobile (<= 768px): enlarged to 72px - 88px with clean drop-shadow and non-obstructive safe margins.
+  - Desktop (> 860px): enlarged to 200px - 280px for crystal-clear character expressions.
+  - Tablet (769px - 860px): 135px - 180px.
+  - Mobile (<= 768px): enlarged to 95px - 125px with clean drop-shadow and non-obstructive safe margins.
 - **Interactions**: Interactive spring wobble animation, distinct audio pitches, and unique Elmore reaction toasts on click.
 
 ## Palette & Lighting
