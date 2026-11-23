@@ -303,14 +303,66 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 4 Screen Corners Darwin Character Interaction & Slide-In Trigger
+  // ==========================================================================
+  // SERENE LIQUID GLASS 4-SECOND LOADING SCREEN (DARWIN WALK ANIMATION)
+  // ==========================================================================
+  const loadingScreen = document.getElementById('loading-screen');
+  const loadingProgressBar = document.getElementById('loading-progress-bar');
+  const loadingPercentText = document.getElementById('loading-percent-text');
+  const loadingStatusText = document.getElementById('loading-status-text');
   const cornerContainer = document.querySelector('.corner-darwins-container');
-  if (cornerContainer) {
-    setTimeout(() => {
+
+  function triggerCornerEntrance() {
+    if (cornerContainer && !cornerContainer.classList.contains('corners-active')) {
       cornerContainer.classList.add('corners-active');
-    }, 150);
+    }
   }
 
+  if (loadingScreen) {
+    const startTime = Date.now();
+    const duration = 4000; // 4 seconds timeout requested by user
+
+    const statusStages = [
+      { at: 0, text: 'Menghindari Miss Simian...' },
+      { at: 1200, text: 'Mengikat tali sepatu hijau...' },
+      { at: 2400, text: 'Menyiapkan lagu China Timur...' },
+      { at: 3600, text: 'Selamat datang di Elmore! ✨' }
+    ];
+
+    const loadTimer = setInterval(() => {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min(100, (elapsed / duration) * 100);
+
+      if (loadingProgressBar) loadingProgressBar.style.width = `${progress}%`;
+      if (loadingPercentText) loadingPercentText.textContent = `${Math.round(progress)}%`;
+
+      for (let i = statusStages.length - 1; i >= 0; i--) {
+        if (elapsed >= statusStages[i].at) {
+          if (loadingStatusText && loadingStatusText.textContent !== statusStages[i].text) {
+            loadingStatusText.textContent = statusStages[i].text;
+          }
+          break;
+        }
+      }
+
+      if (elapsed >= duration) {
+        clearInterval(loadTimer);
+        setTimeout(() => {
+          loadingScreen.classList.add('is-loaded');
+          // Trigger corner Darwins slide-in right as loading screen dissolves
+          setTimeout(triggerCornerEntrance, 200);
+          setTimeout(() => {
+            loadingScreen.style.display = 'none';
+          }, 700);
+        }, 100);
+      }
+    }, 30);
+  } else {
+    // Fallback if loading screen element is omitted
+    setTimeout(triggerCornerEntrance, 250);
+  }
+
+  // 4 Screen Corners Darwin Character Interaction
   const cornerDarwinButtons = document.querySelectorAll('.corner-darwin-btn');
   const cornerSounds = {
     tl: 640,

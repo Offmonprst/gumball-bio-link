@@ -458,6 +458,186 @@ body {
 }
 
 /* ==========================================================================
+   SERENE LIQUID GLASS LOADING SCREEN (4-SECOND DARWIN WALK)
+   ========================================================================== */
+.liquid-loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, rgba(240, 249, 255, 0.94) 0%, rgba(224, 242, 254, 0.96) 50%, rgba(204, 251, 241, 0.98) 100%);
+  backdrop-filter: blur(32px) saturate(180%);
+  -webkit-backdrop-filter: blur(32px) saturate(180%);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.65s ease;
+}
+
+.liquid-loading-screen.is-loaded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loading-glass-card {
+  position: relative;
+  overflow: hidden;
+  width: 90%;
+  max-width: 360px;
+  padding: 32px 24px 28px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(240, 253, 250, 0.68) 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 
+    0 20px 48px rgba(12, 74, 110, 0.16),
+    0 8px 20px rgba(52, 211, 153, 0.12),
+    inset 0 2px 2px rgba(255, 255, 255, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.loading-ambient-orb {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.loading-darwin-stage {
+  position: relative;
+  width: 160px;
+  height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.loading-darwin-sprite {
+  width: 140px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 20px rgba(12, 74, 110, 0.25));
+  animation: darwin-walking-bob 0.45s ease-in-out infinite alternate;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes darwin-walking-bob {
+  0% { transform: translateY(0) rotate(-1deg); }
+  100% { transform: translateY(-6px) rotate(1.5deg); }
+}
+
+.loading-darwin-shadow {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(12, 74, 110, 0.28) 0%, transparent 70%);
+  animation: darwin-shadow-pulse 0.45s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+@keyframes darwin-shadow-pulse {
+  0% { transform: translateX(-50%) scale(1); opacity: 0.8; }
+  100% { transform: translateX(-50%) scale(0.85); opacity: 0.5; }
+}
+
+.walk-sparkle {
+  position: absolute;
+  font-size: 1rem;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.sparkle-1 {
+  top: 20px;
+  right: 15px;
+  animation: sparkle-float 1.2s ease-in-out infinite;
+}
+
+.sparkle-2 {
+  bottom: 25px;
+  left: 15px;
+  animation: sparkle-float 1.5s ease-in-out infinite 0.4s;
+}
+
+@keyframes sparkle-float {
+  0%, 100% { transform: translateY(0) scale(0.9); opacity: 0.4; }
+  50% { transform: translateY(-8px) scale(1.15); opacity: 1; }
+}
+
+.loading-title {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 4px;
+}
+
+.loading-status {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin: 0 0 18px;
+  min-height: 22px;
+  transition: opacity 0.2s ease;
+}
+
+.loading-progress-track {
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(12, 74, 110, 0.08);
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.loading-progress-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #38BDF8 0%, #34D399 50%, #10B981 100%);
+  box-shadow: 0 0 12px rgba(52, 211, 153, 0.45);
+  transition: width 0.05s linear;
+}
+
+.loading-percentage-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.loading-badge {
+  background: rgba(56, 189, 248, 0.12);
+  color: #0284C7;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.loading-percent {
+  color: #047857;
+}
+
+/* ==========================================================================
    SERENE LIQUID GLASS MUSIC PLAYER (BESPOKE THEMED SPOTIFY WIDGET)
    ========================================================================== */
 .liquid-music-card {
