@@ -13,7 +13,13 @@
 
 ## Social Media Dock, Quick Links & Spotify Player
 - **Hero Dock**: Replaced status pill with frosted liquid glass pill buttons for Instagram (@thisdarwin.id), TikTok (@thisdarwin.id), and YouTube (@thisdarwin.id9).
-- **Embedded Spotify Player**: Added an interactive Spotify track embed widget under the profile card for song "China Timur" (track `0xbPLWeY6twRh7xUDu0PU8`), playable directly in the web browser with Serene Liquid Glass frame, frosted specular highlights, and pastel green badge.
+- **Serene Liquid Glass Music Player Widget**: Replaced the generic black Spotify embed iframe with a bespoke, theme-native music player featuring:
+  - Frosted liquid glass card with specular highlights, rim lighting, and ambient glow.
+  - Interactive spinning vinyl disc with realistic concentric grooves and official "China Timur" album artwork.
+  - Live animated pastel soundwaves (equalizer bars) that dance during playback.
+  - Interactive progress bar with scrubbing, real-time duration counter, and replay controls.
+  - Tactile liquid pill play/pause button with cartoon pop sound effects.
+  - Official Spotify badge linking directly to the track on Spotify for full listening.
 - **Bento Grid**: Curated interactive cards for GitHub (Offmonprst), Discord, and direct Spotify track link.
 
 ## 4 Screen Corners Darwin Characters

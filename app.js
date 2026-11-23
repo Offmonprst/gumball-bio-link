@@ -340,4 +340,132 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // ==========================================================================
+  // SERENE LIQUID GLASS MUSIC PLAYER CONTROLLER
+  // ==========================================================================
+  const musicCard = document.getElementById('darwin-music-player');
+  const musicAudio = document.getElementById('darwin-spotify-audio');
+  const playBtn = document.getElementById('music-play-btn');
+  const playSvg = document.getElementById('play-svg');
+  const pauseSvg = document.getElementById('pause-svg');
+  const playText = document.getElementById('play-btn-text');
+  const vinylDisc = document.getElementById('music-vinyl');
+  const progressRail = document.getElementById('music-progress-rail');
+  const progressFill = document.getElementById('music-progress-fill');
+  const progressThumb = document.getElementById('music-progress-thumb');
+  const currentTimeLabel = document.getElementById('music-current-time');
+  const totalTimeLabel = document.getElementById('music-total-time');
+  const replayBtn = document.getElementById('music-replay-btn');
+  const volBtn = document.getElementById('music-vol-btn');
+
+  if (musicAudio && playBtn) {
+    function formatTime(seconds) {
+      if (isNaN(seconds) || seconds < 0) return '0:00';
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+    }
+
+    function updatePlayState(isPlaying) {
+      if (!musicCard) return;
+      if (isPlaying) {
+        musicCard.classList.add('is-playing');
+        if (vinylDisc) vinylDisc.classList.add('is-playing');
+        if (playSvg) playSvg.style.display = 'none';
+        if (pauseSvg) pauseSvg.style.display = 'block';
+        if (playText) playText.textContent = 'Jeda Lagu';
+        playBtn.setAttribute('title', 'Jeda lagu');
+        playBtn.setAttribute('aria-label', 'Jeda lagu China Timur');
+      } else {
+        musicCard.classList.remove('is-playing');
+        if (vinylDisc) vinylDisc.classList.remove('is-playing');
+        if (playSvg) playSvg.style.display = 'block';
+        if (pauseSvg) pauseSvg.style.display = 'none';
+        if (playText) playText.textContent = 'Putar Lagu';
+        playBtn.setAttribute('title', 'Putar lagu');
+        playBtn.setAttribute('aria-label', 'Putar lagu China Timur');
+      }
+    }
+
+    playBtn.addEventListener('click', () => {
+      playCartoonPop(560);
+      if (musicAudio.paused) {
+        musicAudio.play().then(() => {
+          updatePlayState(true);
+        }).catch(err => {
+          console.warn('Playback error:', err);
+        });
+      } else {
+        musicAudio.pause();
+        updatePlayState(false);
+      }
+    });
+
+    musicAudio.addEventListener('loadedmetadata', () => {
+      if (totalTimeLabel && !isNaN(musicAudio.duration)) {
+        totalTimeLabel.textContent = formatTime(musicAudio.duration);
+      }
+    });
+
+    musicAudio.addEventListener('timeupdate', () => {
+      const cur = musicAudio.currentTime;
+      const dur = musicAudio.duration || 30;
+      if (currentTimeLabel) currentTimeLabel.textContent = formatTime(cur);
+      const percent = (cur / dur) * 100;
+      if (progressFill) progressFill.style.width = `${percent}%`;
+      if (progressThumb) progressThumb.style.left = `${percent}%`;
+      if (progressRail) progressRail.setAttribute('aria-valuenow', Math.round(percent));
+    });
+
+    musicAudio.addEventListener('ended', () => {
+      updatePlayState(false);
+      if (progressFill) progressFill.style.width = '0%';
+      if (progressThumb) progressThumb.style.left = '0%';
+      if (currentTimeLabel) currentTimeLabel.textContent = '0:00';
+      if (playText) playText.textContent = 'Putar Lagi';
+    });
+
+    // Seeking on Progress Rail
+    if (progressRail) {
+      function seekAudio(e) {
+        const rect = progressRail.getBoundingClientRect();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clickX = Math.max(0, Math.min(clientX - rect.left, rect.width));
+        const percent = clickX / rect.width;
+        if (musicAudio.duration) {
+          musicAudio.currentTime = percent * musicAudio.duration;
+        }
+      }
+
+      progressRail.addEventListener('click', (e) => {
+        playCartoonPop(620);
+        seekAudio(e);
+      });
+    }
+
+    // Replay Button
+    if (replayBtn) {
+      replayBtn.addEventListener('click', () => {
+        playCartoonPop(600);
+        musicAudio.currentTime = 0;
+        musicAudio.play().then(() => {
+          updatePlayState(true);
+        });
+      });
+    }
+
+    // Volume / Mute Toggle
+    if (volBtn) {
+      volBtn.addEventListener('click', () => {
+        musicAudio.muted = !musicAudio.muted;
+        playCartoonPop(musicAudio.muted ? 420 : 680);
+        volBtn.title = musicAudio.muted ? 'Bunyikan lagu' : 'Bisukan lagu';
+        volBtn.style.opacity = musicAudio.muted ? '0.5' : '1';
+        if (typeof showToast === 'function') {
+          showToast(musicAudio.muted ? 'Lagu dibisukan 🔇' : 'Suara lagu aktif 🔊');
+        }
+      });
+    }
+  }
 });

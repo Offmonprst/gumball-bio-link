@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=spotify-corner-v3">
+  <link rel="stylesheet" href="styles.css?v=liquid-player-custom-v1">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%2338BDF8' stroke='%23FFFFFF' stroke-width='4'/><circle cx='38' cy='42' r='8' fill='%23FFFFFF'/><circle cx='62' cy='42' r='8' fill='%23FFFFFF'/><circle cx='40' cy='42' r='4' fill='%230F2942'/><circle cx='60' cy='42' r='4' fill='%230F2942'/><ellipse cx='50' cy='54' rx='6' ry='4' fill='%2334D399'/><path d='M 38 66 Q 50 78 62 66' stroke='%230F2942' stroke-width='4' fill='none' stroke-linecap='round'/></svg>">
   <style>
     /* Critical Corner Positioning: Frameless Large Characters with Noticeable Spring Slide-In */
@@ -239,26 +239,105 @@
         </a>
       </nav>
 
-      <!-- Spotify Favorite Track Player Embed -->
-      <div class="hero-spotify-dock" aria-label="Lagu Favorit si Darwin di Spotify">
-        <div class="spotify-header-badge">
-          <svg class="spotify-badge-svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
-            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.496 17.306c-.217.355-.678.469-1.032.253-2.827-1.727-6.386-2.118-10.577-1.161-.403.092-.806-.157-.899-.56-.092-.404.157-.807.56-.899 4.587-1.048 8.528-.607 11.695 1.334.354.217.469.678.253 1.033zm1.467-3.262c-.274.444-.858.587-1.302.313-3.235-1.988-8.167-2.564-11.994-1.401-.5.152-1.03-.131-1.182-.631-.152-.5.131-1.03.631-1.182 4.378-1.328 9.816-.688 13.534 1.6 1.444.274.588.858.313 1.301zm.126-3.41c-3.88-2.304-10.281-2.516-13.993-1.388-.595.181-1.227-.156-1.408-.751-.181-.595.156-1.227.751-1.408 4.269-1.296 11.332-1.045 15.787 1.6 1.533.316.71 1.02.394 1.553-.317.533-1.02.71-1.554.394z"/>
-          </svg>
-          <span>Lagu Favorit si Darwin</span>
+      <!-- Serene Liquid Glass Music Player (Spotify Themed Widget) -->
+      <div class="liquid-music-card" id="darwin-music-player" aria-label="Pemutar Lagu Favorit si Darwin di Spotify">
+        <div class="glass-specular-top" aria-hidden="true"></div>
+        <div class="music-card-glow" aria-hidden="true"></div>
+
+        <!-- Header: Badge & Spotify Link -->
+        <div class="music-card-header">
+          <div class="music-badge">
+            <span class="music-badge-dot" aria-hidden="true"></span>
+            <span class="music-badge-text">Lagu Favorit si Darwin</span>
+          </div>
+          <a href="https://open.spotify.com/track/0xbPLWeY6twRh7xUDu0PU8?si=ac9778b747454f28" target="_blank" rel="noopener noreferrer" class="music-spotify-pill" title="Buka lagu China Timur di Spotify">
+            <svg class="spotify-pill-svg" viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true">
+              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.496 17.306c-.217.355-.678.469-1.032.253-2.827-1.727-6.386-2.118-10.577-1.161-.403.092-.806-.157-.899-.56-.092-.404.157-.807.56-.899 4.587-1.048 8.528-.607 11.695 1.334.354.217.469.678.253 1.033zm1.467-3.262c-.274.444-.858.587-1.302.313-3.235-1.988-8.167-2.564-11.994-1.401-.5.152-1.03-.131-1.182-.631-.152-.5.131-1.03.631-1.182 4.378-1.328 9.816-.688 13.534 1.6 1.444.274.588.858.313 1.301zm.126-3.41c-3.88-2.304-10.281-2.516-13.993-1.388-.595.181-1.227-.156-1.408-.751-.181-.595.156-1.227.751-1.408 4.269-1.296 11.332-1.045 15.787 1.6 1.533.316.71 1.02.394 1.553-.317.533-1.02.71-1.554.394z"/>
+            </svg>
+            <span>Spotify</span>
+          </a>
         </div>
-        <div class="spotify-embed-card">
-          <iframe 
-            src="https://open.spotify.com/embed/track/0xbPLWeY6twRh7xUDu0PU8?utm_source=generator&theme=0" 
-            width="100%" 
-            height="152" 
-            frameborder="0" 
-            allowfullscreen="" 
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-            loading="lazy" 
-            title="Putar Lagu Favorit si Darwin: China Timur di Spotify">
-          </iframe>
+
+        <!-- Body: Spinning Vinyl Disc + Track Details + Live Soundwaves -->
+        <div class="music-body">
+          <!-- Spinning Vinyl Disc -->
+          <div class="music-disc-assembly">
+            <div class="music-vinyl-disc" id="music-vinyl" title="Piringan Hitam Lagu China Timur">
+              <div class="vinyl-groove groove-1" aria-hidden="true"></div>
+              <div class="vinyl-groove groove-2" aria-hidden="true"></div>
+              <div class="vinyl-groove groove-3" aria-hidden="true"></div>
+              <div class="vinyl-center-label">
+                <img src="assets/track-cover.jpg" alt="Sampul Lagu China Timur" class="vinyl-cover-img" width="70" height="70">
+              </div>
+              <div class="vinyl-shine" aria-hidden="true"></div>
+            </div>
+            <div class="vinyl-spindle" aria-hidden="true"></div>
+          </div>
+
+          <!-- Metadata & Animated Equalizer -->
+          <div class="music-meta">
+            <div class="music-titles">
+              <h3 class="music-track-title">China Timur</h3>
+              <p class="music-artist-name">Encho Dc</p>
+            </div>
+
+            <!-- Animated Soundwaves -->
+            <div class="music-equalizer" id="music-equalizer" aria-label="Visualisasi Equalizer Suara">
+              <span class="eq-bar eq-bar-1"></span>
+              <span class="eq-bar eq-bar-2"></span>
+              <span class="eq-bar eq-bar-3"></span>
+              <span class="eq-bar eq-bar-4"></span>
+              <span class="eq-bar eq-bar-5"></span>
+            </div>
+          </div>
         </div>
+
+        <!-- Seek Progress Bar & Time -->
+        <div class="music-progress-wrapper">
+          <div class="music-progress-rail" id="music-progress-rail" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" tabindex="0" aria-label="Bilah progres lagu">
+            <div class="music-progress-fill" id="music-progress-fill" style="width: 0%"></div>
+            <div class="music-progress-thumb" id="music-progress-thumb" style="left: 0%"></div>
+          </div>
+          <div class="music-time-row">
+            <span class="music-time-current" id="music-current-time">0:00</span>
+            <span class="music-preview-tag">Preview Resmi</span>
+            <span class="music-time-total" id="music-total-time">0:30</span>
+          </div>
+        </div>
+
+        <!-- Bottom Controls -->
+        <div class="music-controls-row">
+          <!-- Replay Button -->
+          <button type="button" class="music-btn-sm" id="music-replay-btn" aria-label="Putar ulang dari awal" title="Putar ulang lagu">
+            <svg viewBox="0 0 24 24" class="music-svg-sm" aria-hidden="true">
+              <path fill="currentColor" d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/>
+            </svg>
+          </button>
+
+          <!-- Main Play/Pause Liquid Button -->
+          <button type="button" class="music-play-btn" id="music-play-btn" aria-label="Putar lagu China Timur" title="Putar lagu">
+            <div class="glass-specular-top" aria-hidden="true"></div>
+            <svg viewBox="0 0 24 24" class="play-svg" id="play-svg" aria-hidden="true">
+              <path fill="currentColor" d="M8 5v14l11-7z"/>
+            </svg>
+            <svg viewBox="0 0 24 24" class="pause-svg" id="pause-svg" aria-hidden="true" style="display: none;">
+              <path fill="currentColor" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+            </svg>
+            <span class="play-btn-text" id="play-btn-text">Putar Lagu</span>
+          </button>
+
+          <!-- Volume / Mute Toggle Button -->
+          <button type="button" class="music-btn-sm" id="music-vol-btn" aria-label="Bisukan atau bunyikan lagu" title="Bisukan / Bunyikan">
+            <svg viewBox="0 0 24 24" class="music-svg-sm" id="music-vol-svg" aria-hidden="true">
+              <path fill="currentColor" d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Native Audio Element -->
+        <audio id="darwin-spotify-audio" preload="metadata">
+          <source src="assets/china-timur-preview.mp3" type="audio/mpeg">
+        </audio>
       </div>
     </section>
 
@@ -378,6 +457,6 @@
     <span id="toast-message">Tautan berhasil disalin ke papan klip!</span>
   </div>
 
-  <script src="app.js?v=spotify-corner-v3"></script>
+  <script src="app.js?v=liquid-player-custom-v1"></script>
 </body>
 </html>
