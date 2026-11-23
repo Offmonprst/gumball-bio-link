@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=natural-darwin-v4">
+  <link rel="stylesheet" href="styles.css?v=articulated-darwin-v6">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%2338BDF8' stroke='%23FFFFFF' stroke-width='4'/><circle cx='38' cy='42' r='8' fill='%23FFFFFF'/><circle cx='62' cy='42' r='8' fill='%23FFFFFF'/><circle cx='40' cy='42' r='4' fill='%230F2942'/><circle cx='60' cy='42' r='4' fill='%230F2942'/><ellipse cx='50' cy='54' rx='6' ry='4' fill='%2334D399'/><path d='M 38 66 Q 50 78 62 66' stroke='%230F2942' stroke-width='4' fill='none' stroke-linecap='round'/></svg>">
   <style>
     /* Critical Corner Positioning: Frameless Large Characters with Noticeable Spring Slide-In */
@@ -120,7 +120,7 @@
       <div class="glass-specular-top" aria-hidden="true"></div>
       <div class="loading-ambient-orb" aria-hidden="true"></div>
 
-      <!-- Walking Darwin Character (Authentic Cartoon Network Animation) -->
+      <!-- Walking Darwin Character (Authentic On-Model Articulated HTML Rig) -->
       <div class="loading-darwin-stage" aria-label="Animasi Darwin Watterson berjalan ceria">
         <!-- Contact Floor Shadow -->
         <div class="darwin-svg-shadow" aria-hidden="true"></div>
@@ -130,19 +130,33 @@
           <div class="path-moving-dots"></div>
         </div>
 
-        <!-- Authentic Official Darwin Walker Rig -->
+        <!-- Authentic 60 FPS Articulated Darwin Walker Rig -->
         <div class="darwin-actor-wrap" aria-hidden="true">
-          <picture class="darwin-walker-picture">
-            <source srcset="assets/darwin-walk-cycle.webp?v=natural-darwin-v4" type="image/webp">
-            <img src="assets/darwin-walk-cycle.gif?v=natural-darwin-v4"
-                 alt="Darwin Watterson berjalan"
-                 class="darwin-official-walker-img"
-                 width="175"
-                 height="245">
-          </picture>
+          <div class="darwin-rig-walker">
+            <!-- Back Leg (Left leg behind body) -->
+            <div class="darwin-rig-leg leg-back">
+              <img src="assets/darwin-rig-leg-back.png" alt="" class="rig-leg-img" width="56" height="105">
+            </div>
+
+            <!-- Front Leg (Right leg in front) -->
+            <div class="darwin-rig-leg leg-front">
+              <img src="assets/darwin-rig-leg.png" alt="" class="rig-leg-img" width="56" height="105">
+            </div>
+
+            <!-- Authentic Torso & Head (Canonical Cartoon Network Darwin with Joyful Expression) -->
+            <div class="darwin-rig-body">
+              <img src="assets/darwin-rig-head.png" alt="Darwin Watterson" class="rig-head-img" width="160" height="110">
+            </div>
+          </div>
         </div>
 
-        <span class="walk-sparkle sparkle-1" aria-hidden="true">✨</span>
+        <!-- Crisp SVG Sparkles (No missing glyph boxes) -->
+        <svg class="walk-sparkle sparkle-1" viewBox="0 0 24 24" width="22" height="22" fill="#F59E0B" aria-hidden="true">
+          <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"/>
+        </svg>
+        <svg class="walk-sparkle sparkle-2" viewBox="0 0 24 24" width="16" height="16" fill="#38BDF8" aria-hidden="true">
+          <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"/>
+        </svg>
       </div>
 
       <!-- Title & Live Stage Messages -->
@@ -491,6 +505,6 @@
     <span id="toast-message">Tautan berhasil disalin ke papan klip!</span>
   </div>
 
-  <script src="app.js?v=natural-darwin-v4"></script>
+  <script src="app.js?v=articulated-darwin-v6"></script>
 </body>
 </html>

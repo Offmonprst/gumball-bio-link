@@ -521,7 +521,7 @@ body {
   margin-bottom: 6px;
 }
 
-/* Authentic Official Cartoon Network Darwin Walker */
+/* Authentic 60 FPS Articulated Darwin Walker Rig */
 .darwin-actor-wrap {
   position: relative;
   z-index: 2;
@@ -530,44 +530,111 @@ body {
   justify-content: center;
 }
 
-.darwin-walker-picture {
-  display: block;
-  line-height: 0;
-}
-
-.darwin-official-walker-img {
+.darwin-rig-walker {
+  position: relative;
   width: 175px;
-  height: auto;
-  max-height: 245px;
-  object-fit: contain;
-  filter: drop-shadow(0 12px 24px rgba(12, 74, 110, 0.22));
-  image-rendering: auto;
+  height: 235px;
+  margin: 0 auto;
+  filter: drop-shadow(0 10px 20px rgba(12, 74, 110, 0.24));
   user-select: none;
   pointer-events: none;
+}
+
+/* 60 FPS Body Squash & Stretch Bounce */
+.darwin-rig-body {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 160px;
+  height: 110px;
+  transform: translateX(-50%);
+  z-index: 3;
+  animation: rig-body-bob 0.42s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+  transform-origin: center bottom;
+  will-change: transform;
+}
+
+.rig-head-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+@keyframes rig-body-bob {
+  0% { transform: translateX(-50%) translateY(0px) rotate(-1.5deg) scale(1.02, 0.98); }
+  100% { transform: translateX(-50%) translateY(-8px) rotate(1.5deg) scale(0.98, 1.02); }
+}
+
+/* Legs: Hardware-accelerated 60 FPS stride */
+.darwin-rig-leg {
+  position: absolute;
+  top: 98px;
+  width: 64px;
+  height: 130px;
+  transform-origin: 18px 10px;
+  will-change: transform;
+}
+
+.rig-leg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Back Leg (Left leg behind body) */
+.darwin-rig-leg.leg-back {
+  left: 58px;
+  z-index: 1;
+  animation: rig-leg-back 0.84s cubic-bezier(0.35, 0, 0.65, 1) infinite;
+}
+
+@keyframes rig-leg-back {
+  0% { transform: rotate(-24deg) translateY(-2px); }
+  25% { transform: rotate(2deg) translateY(-16px) scaleY(0.92); }
+  50% { transform: rotate(22deg) translateY(0px) scaleY(1); }
+  75% { transform: rotate(2deg) translateY(2px); }
+  100% { transform: rotate(-24deg) translateY(-2px); }
+}
+
+/* Front Leg (Right leg in front) */
+.darwin-rig-leg.leg-front {
+  left: 80px;
+  z-index: 2;
+  animation: rig-leg-front 0.84s cubic-bezier(0.35, 0, 0.65, 1) infinite;
+}
+
+@keyframes rig-leg-front {
+  0% { transform: rotate(22deg) translateY(0px) scaleY(1); }
+  25% { transform: rotate(2deg) translateY(2px); }
+  50% { transform: rotate(-24deg) translateY(-2px); }
+  75% { transform: rotate(2deg) translateY(-16px) scaleY(0.92); }
+  100% { transform: rotate(22deg) translateY(0px) scaleY(1); }
 }
 
 /* Floor Contact Shadow */
 .darwin-svg-shadow {
   position: absolute;
-  bottom: 8px;
+  bottom: 6px;
   left: 50%;
   transform: translateX(-50%);
-  width: 108px;
+  width: 125px;
   height: 14px;
   border-radius: 50%;
-  background: radial-gradient(ellipse at center, rgba(12, 74, 110, 0.38) 0%, transparent 72%);
-  animation: darwin-shadow-step 0.34s ease-in-out infinite alternate;
+  background: radial-gradient(ellipse at center, rgba(12, 74, 110, 0.42) 0%, transparent 72%);
+  animation: darwin-shadow-step 0.42s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
   z-index: 1;
 }
 
 @keyframes darwin-shadow-step {
-  0% { transform: translateX(-50%) scaleX(1) scaleY(1); opacity: 0.85; }
-  100% { transform: translateX(-50%) scaleX(0.85) scaleY(0.75); opacity: 0.6; }
+  0% { transform: translateX(-50%) scaleX(1.05) scaleY(1); opacity: 0.9; }
+  100% { transform: translateX(-50%) scaleX(0.82) scaleY(0.7); opacity: 0.55; }
 }
 
 /* Moving Frosted Glass Treadmill Track */
 .loading-walk-path {
-  width: 140px;
+  width: 155px;
   height: 6px;
   border-radius: 999px;
   background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.35), rgba(52, 211, 153, 0.45), transparent);
