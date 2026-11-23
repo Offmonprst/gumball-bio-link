@@ -353,7 +353,7 @@ document.addEventListener('DOMContentLoaded', () => {
           setTimeout(triggerCornerEntrance, 200);
           setTimeout(() => {
             loadingScreen.style.display = 'none';
-          }, 700);
+          }, 850);
         }, 100);
       }
     }, 30);
