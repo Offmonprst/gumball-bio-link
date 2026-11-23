@@ -13,9 +13,10 @@
 
 ## Social Media Dock, Quick Links & Spotify Player
 - **Hero Dock**: Replaced status pill with frosted liquid glass pill buttons for Instagram (@thisdarwin.id), TikTok (@thisdarwin.id), and YouTube (@thisdarwin.id9).
-- **Serene Liquid Glass Loading Screen (4-Second Darwin Walk)**:
+- **Serene Liquid Glass Loading Screen (4-Second Pure HTML/SVG Darwin Walk)**:
   - Fullscreen frosted veil with dual ambient glow and liquid specular highlights.
-  - Authentic animated walking Darwin character: swinging legs with iconic green sneakers, white socks, fin, happy facial expression, and dynamic contact shadow.
+  - 100% pure HTML and SVG vector character rig (no bitmap images/GIFs): authentic Darwin proportions, big expressive cartoon eyes with eyelashes and glints, rosy cheeks, open smile, dorsal fin, and wavy tail.
+  - Natural CSS-animated walk cycle: independent hip pivots for front and back legs with iconic green sneakers, white socks, counter-swinging arms, rhythmic body bob, and dynamic contact floor shadow over an animated glass treadmill path.
   - Real-time 4-second progress bar (0% to 100%) and rotating humorous Elmore status messages.
   - Smooth dissolve transition at 4000ms that seamlessly triggers the bouncy entrance of the 4 corner Darwins.
 - **Serene Liquid Glass Music Player Widget (Full Track)**: Replaced the generic black Spotify embed iframe and 30s preview with a bespoke, theme-native music player playing the complete 3:55 song:
