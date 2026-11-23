@@ -1048,138 +1048,242 @@ body {
 }
 
 /* ==========================================================================
-   DARWIN CHARACTER CORNER CLUSTER
+   4 SCREEN CORNERS DARWIN CHARACTERS (SLIDE-IN TRANSITIONS)
    ========================================================================== */
-.darwin-corner-cluster {
+.corner-darwins-container {
+  pointer-events: none;
+}
+
+.corner-darwin {
+  position: fixed;
+  z-index: 80;
+  pointer-events: auto;
+}
+
+/* Individual Corner Coordinates & Slide-In Animations */
+.corner-tl {
+  top: 20px;
+  left: 20px;
+  animation: slide-in-corner-tl 0.85s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s both;
+}
+
+.corner-tr {
+  top: 20px;
+  right: 20px;
+  animation: slide-in-corner-tr 0.85s cubic-bezier(0.34, 1.56, 0.64, 1) 0.28s both;
+}
+
+.corner-bl {
+  bottom: 20px;
+  left: 20px;
+  animation: slide-in-corner-bl 0.85s cubic-bezier(0.34, 1.56, 0.64, 1) 0.42s both;
+}
+
+.corner-br {
+  bottom: 20px;
+  right: 20px;
+  animation: slide-in-corner-br 0.85s cubic-bezier(0.34, 1.56, 0.64, 1) 0.55s both;
+}
+
+/* Initial Slide-In Keyframes from each screen corner */
+@keyframes slide-in-corner-tl {
+  0% {
+    transform: translate3d(-140%, -140%, 0) rotate(-22deg);
+    opacity: 0;
+  }
+  70% {
+    transform: translate3d(6px, 6px, 0) rotate(3deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-corner-tr {
+  0% {
+    transform: translate3d(140%, -140%, 0) rotate(22deg);
+    opacity: 0;
+  }
+  70% {
+    transform: translate3d(-6px, 6px, 0) rotate(-3deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-corner-bl {
+  0% {
+    transform: translate3d(-140%, 140%, 0) rotate(-18deg);
+    opacity: 0;
+  }
+  70% {
+    transform: translate3d(6px, -6px, 0) rotate(3deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-corner-br {
+  0% {
+    transform: translate3d(140%, 140%, 0) rotate(18deg);
+    opacity: 0;
+  }
+  70% {
+    transform: translate3d(-6px, -6px, 0) rotate(-3deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* Liquid Glass Corner Pod Button */
+.corner-darwin-btn {
   position: relative;
   overflow: hidden;
-  background: var(--liquid-glass-bg);
-  backdrop-filter: blur(24px) saturate(190%) brightness(104%);
-  -webkit-backdrop-filter: blur(24px) saturate(190%) brightness(104%);
-  border: var(--liquid-glass-border);
-  border-radius: var(--radius-card);
-  box-shadow: var(--soft-shadow);
-  padding: 14px 14px 12px;
-  width: 100%;
-  max-width: 280px;
-  margin: 10px 0 6px;
-  transition: transform var(--transition-bounce), box-shadow var(--transition-smooth);
-}
-
-.darwin-corner-cluster:hover {
-  box-shadow: var(--glow-shadow);
-}
-
-.darwin-corner-header {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 10px;
-  padding-left: 2px;
-  position: relative;
-  z-index: 2;
-}
-
-.darwin-corner-dot {
-  width: 7px;
-  height: 7px;
-  background: var(--pastel-mint);
-  border-radius: 50%;
-  box-shadow: 0 0 8px var(--pastel-mint);
-  animation: pulse-soft 2.2s infinite ease-in-out;
-}
-
-.darwin-corner-title {
-  font-family: var(--font-display);
-  font-size: 0.75rem;
-  font-weight: 800;
-  color: var(--text-primary);
-  letter-spacing: 0.02em;
-}
-
-.darwin-stickers-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
-  position: relative;
-  z-index: 2;
-}
-
-.darwin-sticker-btn {
-  background: rgba(255, 255, 255, 0.65);
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  border-radius: 16px;
-  padding: 8px 6px;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
-  height: 82px;
-  box-shadow: 0 2px 8px rgba(12, 74, 110, 0.06);
-  transition: transform var(--transition-bounce), box-shadow var(--transition-smooth), background var(--transition-smooth), border-color var(--transition-smooth);
-  position: relative;
+  width: 92px;
+  height: 92px;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.74);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  border-radius: 26px;
+  box-shadow: 0 8px 24px rgba(12, 74, 110, 0.12), inset 0 1px 1px rgba(255, 255, 255, 0.95);
+  cursor: pointer;
+  transition: transform var(--transition-bounce), box-shadow var(--transition-smooth), border-color var(--transition-smooth), background var(--transition-smooth);
   outline: none;
 }
 
-.darwin-sticker-btn:hover {
-  background: rgba(255, 255, 255, 0.92);
-  border-color: rgba(56, 189, 248, 0.6);
-  box-shadow: 0 8px 20px rgba(12, 74, 110, 0.14);
+.corner-glass-specular {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 45%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border-radius: 26px 26px 60% 60% / 20px 20px 10px 10px;
+  pointer-events: none;
+  z-index: 1;
 }
 
-.darwin-sticker-btn:active {
-  transform: scale(0.95);
+.corner-darwin-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(12, 74, 110, 0.16));
+  transition: transform var(--transition-bounce);
+  pointer-events: none;
+  position: relative;
+  z-index: 2;
 }
 
-.darwin-sticker-btn:focus-visible {
+/* Individual Corner Playful Tilts & Ambient Pastels */
+.corner-tl .corner-darwin-btn:hover {
+  transform: translateY(3px) translateX(3px) scale(1.08);
+  border-color: rgba(56, 189, 248, 0.7);
+  box-shadow: 0 12px 28px rgba(56, 189, 248, 0.22);
+}
+.corner-tl .corner-darwin-img {
+  transform: rotate(-3deg);
+}
+
+.corner-tr .corner-darwin-btn:hover {
+  transform: translateY(3px) translateX(-3px) scale(1.08);
+  border-color: rgba(52, 211, 153, 0.7);
+  box-shadow: 0 12px 28px rgba(52, 211, 153, 0.22);
+}
+.corner-tr .corner-darwin-img {
+  transform: rotate(4deg);
+}
+
+.corner-bl .corner-darwin-btn:hover {
+  transform: translateY(-3px) translateX(3px) scale(1.08);
+  border-color: rgba(244, 114, 182, 0.7);
+  box-shadow: 0 12px 28px rgba(244, 114, 182, 0.22);
+}
+.corner-bl .corner-darwin-img {
+  transform: rotate(3deg);
+}
+
+.corner-br .corner-darwin-btn:hover {
+  transform: translateY(-3px) translateX(-3px) scale(1.08);
+  border-color: rgba(245, 158, 11, 0.7);
+  box-shadow: 0 12px 28px rgba(245, 158, 11, 0.22);
+}
+.corner-br .corner-darwin-img {
+  transform: rotate(-4deg);
+}
+
+.corner-darwin-btn:active {
+  transform: scale(0.96);
+}
+
+.corner-darwin-btn:focus-visible {
   outline: 2px solid var(--pastel-blue);
   outline-offset: 2px;
 }
 
-.darwin-sticker-img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  filter: drop-shadow(0 3px 6px rgba(12, 74, 110, 0.15));
-  transition: transform var(--transition-bounce);
-  pointer-events: none;
-}
-
-/* Individual playful sticker tilt */
-.sticker-1 .darwin-sticker-img { transform: rotate(-3deg); }
-.sticker-2 .darwin-sticker-img { transform: rotate(4deg); }
-.sticker-3 .darwin-sticker-img { transform: rotate(-2deg); }
-.sticker-4 .darwin-sticker-img { transform: rotate(3deg); }
-
-.darwin-sticker-btn:hover .darwin-sticker-img {
-  transform: scale(1.15) rotate(0deg);
-}
-
+/* Click Wobble Animation */
 .sticker-wobble {
   animation: sticker-pop-wobble 0.45s ease-in-out;
 }
 
 @keyframes sticker-pop-wobble {
   0% { transform: scale(1); }
-  35% { transform: scale(1.22) rotate(-6deg); }
-  65% { transform: scale(1.12) rotate(4deg); }
+  35% { transform: scale(1.2) rotate(-8deg); }
+  65% { transform: scale(1.1) rotate(6deg); }
   100% { transform: scale(1) rotate(0deg); }
 }
 
-/* Desktop screen positioning: Fixed gracefully at bottom-left corner */
-@media (min-width: 821px) {
-  .darwin-corner-cluster {
-    position: fixed;
-    bottom: 24px;
-    left: 24px;
-    width: 172px;
-    margin: 0;
-    z-index: 60;
+/* Mobile Screens: Compact & Non-Obstructive */
+@media (max-width: 768px) {
+  .corner-tl {
+    top: 10px;
+    left: 10px;
+  }
+  .corner-tr {
+    top: 10px;
+    right: 10px;
+  }
+  .corner-bl {
+    bottom: 12px;
+    left: 10px;
+  }
+  .corner-br {
+    bottom: 12px;
+    right: 10px;
   }
 
-  .darwin-sticker-btn {
-    height: 72px;
+  .corner-darwin-btn {
+    width: 50px;
+    height: 50px;
+    min-height: 44px;
+    min-width: 44px;
+    padding: 4px;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(12, 74, 110, 0.12);
+  }
+
+  .corner-glass-specular {
+    border-radius: 16px 16px 60% 60% / 14px 14px 8px 8px;
+  }
+
+  /* Prevent sound button collision with top-right corner */
+  .top-liquid-nav {
+    padding-right: 50px;
   }
 }
 

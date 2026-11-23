@@ -303,27 +303,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Darwin Corner Stickers Interaction
-  const stickerButtons = document.querySelectorAll('.darwin-sticker-btn');
-  const stickerSounds = [620, 750, 560, 480];
-  const stickerReactions = [
-    'Darwin: Halo teman-teman! Senang bertemu kalian! ✨',
-    'Darwin: Semangat! Tetap tersenyum hari ini! 🌟',
-    'Darwin: Sahabat sejati selalu ada bersama! 🐟',
-    'Darwin: Santai sejenak dan nikmati harimu! 🍀'
-  ];
+  // 4 Screen Corners Darwin Character Interaction
+  const cornerDarwinButtons = document.querySelectorAll('.corner-darwin-btn');
+  const cornerSounds = {
+    tl: 640,
+    tr: 750,
+    bl: 560,
+    br: 480
+  };
+  const cornerReactions = {
+    tl: 'Darwin: Halo dari sudut kiri atas! ✨',
+    tr: 'Darwin: Mengintip ceria dari sudut kanan atas! 🐟',
+    bl: 'Darwin: Menjaga sudut kiri bawah dengan sepatu hijau! 👟',
+    br: 'Darwin: Melompat gembira dari sudut kanan bawah! 🌟'
+  };
 
-  stickerButtons.forEach((btn, idx) => {
+  cornerDarwinButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      const freq = stickerSounds[idx] || 550;
+      const corner = btn.getAttribute('data-corner') || 'tl';
+      const freq = cornerSounds[corner] || 550;
       playCartoonPop(freq, 'triangle');
 
       btn.classList.remove('sticker-wobble');
       void btn.offsetWidth;
       btn.classList.add('sticker-wobble');
 
-      if (typeof showToast === 'function' && stickerReactions[idx]) {
-        showToast(stickerReactions[idx]);
+      if (typeof showToast === 'function' && cornerReactions[corner]) {
+        showToast(cornerReactions[corner]);
       }
     });
   });

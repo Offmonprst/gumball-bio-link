@@ -15,14 +15,21 @@
 - **Hero Dock**: Replaced status pill with frosted liquid glass pill buttons for Instagram (@thisdarwin.id), TikTok (@thisdarwin.id), and YouTube (@thisdarwin.id9).
 - **Bento Grid**: Curated interactive cards for GitHub (Offmonprst), Discord, and Spotify (avoiding duplication with the top social dock).
 
-## Darwin Character Corner (Sudut si Darwin)
-- **4 Distinct Poses**:
-  1. Darwin Standing with iconic green shoes (assets/darwin-corner-1.png)
-  2. Darwin Jumping happily with arms outstretched (assets/darwin-corner-2.png)
-  3. Darwin Smiling warmly and waving (assets/darwin-corner-3.png)
-  4. Darwin Lying down cheerfully (assets/darwin-corner-4.png)
-- **Positioning**: Fixed in bottom-left corner on desktop screens (> 820px); seamlessly integrated at the bottom of the container on mobile devices without obstructing any tap targets.
-- **Interactions**: Interactive wobble animation, individual cartoon audio frequencies, and uplifting speech toasts when clicked.
+## 4 Screen Corners Darwin Characters
+- **4 Distinct Poses in 4 Corners**:
+  1. Top-Left Corner: Darwin Waving and smiling (assets/darwin-corner-3.png)
+  2. Top-Right Corner: Darwin Lying down cheerfully and peeking (assets/darwin-corner-4.png)
+  3. Bottom-Left Corner: Darwin Standing proudly with green shoes (assets/darwin-corner-1.png)
+  4. Bottom-Right Corner: Darwin Jumping with open arms (assets/darwin-corner-2.png)
+- **Initial Slide-In Transition**:
+  - Top-Left: slides in from offscreen top-left with spring bounce (0.15s delay)
+  - Top-Right: slides in from offscreen top-right with spring bounce (0.28s delay)
+  - Bottom-Left: slides in from offscreen bottom-left with spring bounce (0.42s delay)
+  - Bottom-Right: slides in from offscreen bottom-right with spring bounce (0.55s delay)
+- **Corner Fitting & Responsiveness**:
+  - Desktop (> 768px): fixed 92px frosted liquid glass pods with specular rim highlight, seated at each of the 4 outer screen corners.
+  - Mobile (<= 768px): compact 50px pods at the screen corners with safe padding preventing collision with navigation buttons.
+- **Interactions**: Interactive spring wobble animation, distinct audio pitches, and unique Elmore reaction toasts on click.
 
 ## Palette & Lighting
 - **Pastel Glass Surface**: `linear-gradient(135deg, rgba(255, 255, 255, 0.72) 0%, rgba(240, 253, 250, 0.52) 100%)`
