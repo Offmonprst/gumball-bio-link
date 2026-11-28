@@ -1502,6 +1502,106 @@ body {
 }
 
 /* ==========================================================================
+   ANTI-PIRACY WARNING NOTICE CARD
+   ========================================================================== */
+.warning-glass-card {
+  padding: 18px 20px;
+  background: linear-gradient(135deg, rgba(255, 251, 235, 0.9) 0%, rgba(254, 243, 199, 0.78) 100%);
+  border: 1.5px solid rgba(245, 158, 11, 0.45);
+  border-left: 5px solid #D97706;
+}
+
+.warning-card-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  position: relative;
+  z-index: 2;
+}
+
+.warning-icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 6px 14px rgba(217, 119, 6, 0.22);
+}
+
+.warning-svg {
+  width: 22px;
+  height: 22px;
+}
+
+.warning-text-wrap {
+  flex: 1;
+  text-align: left;
+}
+
+.warning-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.warning-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #78350F;
+}
+
+.warning-status-pill {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 800;
+  background: rgba(217, 119, 6, 0.14);
+  color: #92400E;
+  border: 1px solid rgba(217, 119, 6, 0.3);
+  padding: 3px 9px;
+  border-radius: var(--radius-pill);
+}
+
+.warning-desc {
+  font-size: 0.835rem;
+  font-weight: 600;
+  color: #451A03;
+  line-height: 1.5;
+}
+
+.warning-desc em {
+  font-style: italic;
+  font-weight: 700;
+}
+
+@media (max-width: 480px) {
+  .warning-glass-card {
+    padding: 16px;
+  }
+
+  .warning-card-inner {
+    gap: 12px;
+  }
+
+  .warning-icon-box {
+    width: 36px;
+    height: 36px;
+    border-radius: 11px;
+  }
+
+  .warning-svg {
+    width: 19px;
+    height: 19px;
+  }
+}
+
+/* ==========================================================================
    SHARE LIQUID GLASS DOCK
    ========================================================================== */
 .share-glass-dock {
